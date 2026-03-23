@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260322",
+  "headline_summary": "北京时间20260322硬更新不多，但两条工程信号明确：smolagents将工具输出层间接注入防护做成可插拔Shield；MCP Python SDK出现无效UTF-8触发崩溃的DoS路径，需加固与回归。",
+  "items": [
+    {
+      "title": "smolagents 提议/实现“工具输出层”间接提示词注入 Shield（可插拔、带阻断/清洗/告警策略）",
+      "summary": "为MultiStepAgent新增shields=，在工具输出进入上下文前扫描；提供PatternShield与PromptGuardShield两类检测，支持BLOCK/SANITIZE/WARN动作，并配套57条测试覆盖长文本、unicode与埋藏式注入。",
+      "impact": "先对浏览器/检索/SQL/CI日志等高风险tool输出加统一过滤与告警，建立注入样例回归，并评估规则预筛→模型复核的降级策略。",
+      "source": "Hugging Face smolagents（Issue/PR）"
+    },
+    {
+      "title": "MCP Python SDK：接收原始无效 UTF-8 字节可触发 server 崩溃（DoS 风险），并给出可复现 PoC",
+      "summary": "python-sdk报告：client在请求参数发送原始无效UTF-8字节时，server可能在响应路径触发anyio.ClosedResourceError并崩溃；给出最小PoC（向stdin写入恶意JSON-RPC片段）证明单次请求即可造成DoS。",
+      "impact": "把MCP server按网络服务治理：入口限流+进程隔离与自动重启+关键异常告警，并把非法字节/半包/断连等协议异常纳入回归测试。",
+      "source": "modelcontextprotocol/python-sdk（Issue）"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260322.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
