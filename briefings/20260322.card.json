@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260322",
+  "headline_summary": "昨日（北京时间2026-03-22）头部厂商当日硬更新不多；工程平台与多模型网关侧两条一手发布落窗，聚焦新模型/新字段跟进，以及评测与可观测性工程化落地。",
+  "items": [
+    {
+      "title": "Langfuse v3.161.0：补齐新模型支持与评测输出形态，持续强化 OTel 管线",
+      "summary": "发布 v3.161.0，新增 gpt-5.4-mini/nano 支持；Evals 支持 categorical LLM-as-a-judge 输出；OTel 管线支持 Genkit spans，并包含多项 OTel 修复与依赖安全升级。",
+      "impact": "评估升级并核对新模型识别；将 categorical judge 结果接入 PR/发布门禁；验证 OTel/Genkit span 适配与采样映射。",
+      "source": "Langfuse GitHub Release"
+    },
+    {
+      "title": "LiteLLM v1.82.6-nightly：增强 Anthropic/OpenAI Responses 互通与推理摘要控制，完善多云路由细节",
+      "summary": "发布 v1.82.6-nightly，强化 Anthropic↔OpenAI Responses 路由兼容（如保留/对齐 thinking.summary、提供默认推理摘要 opt-out）；修复 Gemini 图片用量统计低估与 tool_results 图片支持；包含 Azure tools+reasoning 路由细节调整。",
+      "impact": "回归检查 thinking.summary、finish_reason 映射与成本统计；为 Gemini 含图片调用补用量校验测试；nightly 先在预发/灰度对照回归再扩大。",
+      "source": "LiteLLM GitHub Release"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260322.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
