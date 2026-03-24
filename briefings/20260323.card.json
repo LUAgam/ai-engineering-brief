@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260323",
+  "headline_summary": "北京时间20260323可核实且直接影响工程实践的新增不多，重点集中在工程工具链：Microsoft Aspire 13.2.0把 agent、MCP、Foundry 与本地编排进一步合并；OpenClaw 带来插件 SDK 与 Browser MCP 的 breaking changes；Vercel AI SDK 则移除了 experimental agent events，提示事件契约仍在收敛。",
+  "items": [
+    {
+      "title": "Microsoft Aspire 13.2.0 把 AI agent、MCP 与本地应用编排进一步并到同一条开发链路",
+      "summary": "Aspire 13.2.0 新增面向工程团队与 agent 的统一 CLI 入口，加入 TypeScript AppHost 预览、WithMcpServer 和 Microsoft Foundry 集成，并明确列出服务发现、配置文件与 Foundry 命名迁移等 breaking changes。",
+      "impact": "先核对 13.2 breaking changes，补服务发现、配置迁移、CLI 自动化脚本与 MCP 暴露路径回归，再评估 aspire agent 和 doctor/describe 是否可替代内部脚本。",
+      "source": "Microsoft `microsoft/aspire` GitHub Release / Aspire 官方文档"
+    },
+    {
+      "title": "OpenClaw `2026.3.22` 发布大批 breaking changes，重点落在插件 SDK、Browser MCP 和安全默认项",
+      "summary": "该版本移除 `openclaw/extension-api`，要求迁移到 `openclaw/plugin-sdk/*`；插件安装优先走 ClawHub；Browser/Chrome MCP 去掉旧 relay 路径，并同步收紧 webhook 预认证和 exec/env 注入等安全默认项。",
+      "impact": "盘点是否依赖旧 SDK、旧 Chrome relay、旧环境变量或旧状态目录；升级前先跑 doctor --fix 与浏览器任务、插件装载、审批链路、webhook 的端到端回归。",
+      "source": "OpenClaw 官方 GitHub Release"
+    },
+    {
+      "title": "Vercel AI SDK `ai@6.0.135` 直接移除 experimental agent events，提示事件契约仍在收敛",
+      "summary": "该 patch release 的唯一说明是移除全部 experimental agent events，且变更发生在主包 `ai` 上，没有给出兼容保留层或迁移过渡说明，说明实验性 agent 事件接口尚不稳定。",
+      "impact": "在升级前全文搜索项目内对 experimental agent events 的依赖，把 UI 流式状态、日志采集、埋点和测试断言单列做事件契约对比，避免 patch 升级后静默失效。",
+      "source": "Vercel `vercel/ai` GitHub Release"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260323.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
