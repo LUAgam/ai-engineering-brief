@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260324",
+  "headline_summary": "北京时间 2026-03-24 可核实且直接影响工程实践的新增不多，重点集中在 GitHub：Copilot coding agent 更深进入 PR 评审流程，组织级访问治理接口补齐，同时 CodeQL 增量扫描提速，适合工程团队同步收紧 agent 使用边界与安全门禁。",
+  "items": [
+    {
+      "title": "GitHub 允许在任意 PR 中直接用 @copilot 发起修改",
+      "summary": "GitHub 在 Mar.24 更新中允许开发者直接在任意 PR 里 mention @copilot，让 agent 修复 failing workflows、响应 review comment 或补测试，并在云端环境完成改动、测试和 linter 后推回结果。",
+      "impact": "先把该能力限定在补测试、修静态检查和处理明确 review comment 等低风险任务，并通过试点仓库验证回归覆盖是否足够。",
+      "source": "GitHub Changelog"
+    },
+    {
+      "title": "GitHub 为 Copilot coding agent 提供组织级仓库访问管理 API",
+      "summary": "GitHub 新增 Copilot coding agent management REST APIs，组织管理员可以按编程方式控制 agent 对仓库的访问范围，支持全部禁用、允许所有仓库或只允许选定仓库，当前处于 public preview。",
+      "impact": "优先整理首批 allowlist 仓库，并把加白、撤权和例外审批接入平台治理脚本；关键仓库暂不只依赖 preview 能力控权。",
+      "source": "GitHub Changelog"
+    },
+    {
+      "title": "GitHub 进一步加速 PR 中的 CodeQL 增量分析",
+      "summary": "GitHub 在 Mar.24 将 PR 中的 CodeQL 扫描进一步升级为结合新改动代码数据库与全量缓存数据库的增量分析，覆盖 C#、Java、JavaScript/TypeScript、Python 和 Ruby，但前提仍是默认 query suite 与 build mode none。",
+      "impact": "立即核查现有仓库是否满足默认配置前提，并对比 3 月 24 日前后同类 PR 的扫描耗时，评估是否能据此收紧安全门禁。",
+      "source": "GitHub Changelog"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260324.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
