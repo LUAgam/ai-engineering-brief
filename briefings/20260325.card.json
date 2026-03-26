@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260325",
+  "headline_summary": "3月25日可核实的高价值更新集中在 agent 工程化落地，而非新模型发布：私有化运行、组织级使用度量、Jira/Confluence 协同和知识包注入都在补齐，说明 coding agent 正在走向可治理、可追踪、可接入现有研发流程。",
+  "items": [
+    {
+      "title": "Cursor 上线自托管 cloud agents，把代码、制品和工具执行留在企业内网",
+      "summary": "Cursor 宣布支持 self-hosted cloud agents，代码库、构建产物、密钥和工具调用可留在企业自有基础设施内执行，同时保留隔离环境、多模型 agent harness、插件，以及 worker、Kubernetes operator、Helm chart 等平台化运行方式。",
+      "impact": "先挑依赖内网环境的非核心仓库试点，重点验证权限边界、密钥注入、测试执行与审计日志是否闭环。",
+      "source": "Cursor Changelog / Cursor Blog"
+    },
+    {
+      "title": "GitHub 开始在使用指标里单列 Copilot coding agent 活跃用户，agent 采用率可进入组织治理面板",
+      "summary": "GitHub 为 Copilot usage metrics 增加 `used_copilot_coding_agent` 字段，组织和企业管理员可以在日级与 28 天窗口中识别谁实际触发过 coding agent，并区分 IDE agent 模式与云端 coding agent 的使用情况。",
+      "impact": "把该指标纳入现有 Copilot 运营报表，并与 PR 周期、补测率和 CI 修复时长联动，避免只看使用量下结论。",
+      "source": "GitHub Changelog / GitHub Docs"
+    },
+    {
+      "title": "GitHub 强化 Copilot for Jira：支持模型选择、Jira→PR 可追踪命名，并可通过 MCP 接入 Confluence 上下文",
+      "summary": "GitHub 为 Copilot coding agent for Jira 补充更清晰的集成指引与报错说明，允许在 Jira 评论中指定模型；同时要求分支名和 PR 标题带 Jira ticket 号，并支持通过 Atlassian MCP server 读取 Confluence 页面补充上下文。",
+      "impact": "为试点团队先定义 Jira 触发规范、模型选择策略和 Confluence 最小授权范围，再验证工单到 PR 的闭环稳定性。",
+      "source": "GitHub Changelog / GitHub Docs"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260325.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
