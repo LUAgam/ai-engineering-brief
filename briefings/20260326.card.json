@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260326",
+  "headline_summary": "北京时间 2026-03-26 可核实且直接影响工程实践的新增主要集中在 GitHub 官方更新，重点信号是 AI coding agent 继续深入 PR 处理链路，Actions 侧补齐配置可见性，CI 运行环境也开始走向标准镜像化治理。",
+  "items": [
+    {
+      "title": "GitHub 允许让 @copilot 直接处理 PR 合并冲突",
+      "summary": "GitHub 在 3 月 26 日更新中加入了通过 PR 评论让 Copilot coding agent 合并主干并解决冲突的能力，且明确 agent 会在云端环境中完成修改，并检查构建和测试后再推回结果。",
+      "impact": "先在低风险仓库验证“冲突修复-回归-人工复核”闭环，不要直接放开到数据库迁移、权限逻辑和跨模块重构。",
+      "source": "GitHub Changelog"
+    },
+    {
+      "title": "GitHub 在 Actions 运行摘要中直接展示 Agentic Workflow 配置",
+      "summary": "现在 agentic workflow 的 GitHub Actions 运行摘要里可以直接看到本次执行使用的 markdown 配置，减少在仓库文件、历史提交和运行结果之间来回切换，便于排障、审计和复盘。",
+      "impact": "把运行摘要中的实际配置纳入故障复盘模板，并先复核敏感参数是否会因配置可见性提升而扩大暴露面。",
+      "source": "GitHub Changelog"
+    },
+    {
+      "title": "GitHub-hosted runners 自定义镜像正式 GA",
+      "summary": "GitHub 宣布 GitHub-hosted runners 的自定义镜像能力正式 GA，团队可以基于官方基础镜像预装工具、依赖、证书和配置，以获得更快、更一致、更安全的工作流执行环境。",
+      "impact": "优先为耗时长且环境敏感的工作流评估标准基础镜像，避免每个团队各自维护一套镜像带来新的治理负担。",
+      "source": "GitHub Changelog"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260326.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
