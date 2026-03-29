@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260328",
+  "headline_summary": "昨日高价值新增不多，正式入选内容集中在 AI coding agent 的可运维性与权限边界。Claude Code 补强了会话追踪、MCP 与恢复稳定性；Gemini CLI 则同步调整沙箱网络默认行为，直接影响团队对默认联网与最小权限基线的治理方式。",
+  "items": [
+    {
+      "title": "Claude Code v2.1.86 补强会话追踪与 MCP/恢复稳定性",
+      "summary": "本次更新新增 `X-Claude-Code-Session-Id` 请求头，便于代理层按 session 聚合请求；同时修复旧 session 的 `--resume`、`--bare` 模式下 MCP tools、项目根外规则文件访问等问题，并优化 `.jj`/`.sl` 元数据目录排除与 Read 工具 token 开销。",
+      "impact": "先把 session id 纳入日志、网关和成本看板，再补回归覆盖 `--resume`、`--bare`+MCP、项目根外规则文件与非 Git VCS 场景。",
+      "source": "GitHub Releases：anthropics/claude-code v2.1.86"
+    },
+    {
+      "title": "Gemini CLI 同日补丁将沙箱默认网络权限改为开启",
+      "summary": "Gemini CLI 在稳定版 `v0.35.3` 与预览版 `v0.36.0-preview.6` 同步发布同一修复，将沙箱配置 `networkAccess` 默认值从 `false` 改为 `true`，并更新 Docker、LXC、Podman、runsc 等多类沙箱测试。",
+      "impact": "立即检查团队模板是否默认假设沙箱离线；高约束环境应显式配置 `networkAccess: false`，并分别验证默认联网与显式禁网两条路径。",
+      "source": "GitHub Releases：google-gemini/gemini-cli v0.35.3 / v0.36.0-preview.6"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260328.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
