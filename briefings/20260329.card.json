@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260329",
+  "headline_summary": "北京时间2026年3月29日可核实的高价值AI工程更新不多，重点集中在 coding agent 的任务投递可靠性、插件审批与 MCP 隔离治理，以及多 agent 工作台的 diff、文件与空闲态可见性补强，适合团队优先排查远程派发、默认权限与多终端协作链路。",
+  "items": [
+    {
+      "title": "Claude Code v2.1.87 修复 Cowork Dispatch 消息未送达",
+      "summary": "Anthropic 在北京时间上午发布 v2.1.87，核心修复是 Cowork Dispatch 消息未送达。结合文稿中的官方文档背景，这条更新直接影响 Claude Code 跨设备发起任务、桌面接力执行与远程继续会话的基础可靠性。",
+      "impact": "把跨设备任务派发是否真正进入执行队列纳入冒烟与回归，重点验证弱网、前后台切换和长会话恢复。",
+      "source": "GitHub Releases：anthropics/claude-code `v2.1.87`"
+    },
+    {
+      "title": "OpenClaw 2026.3.28 统一插件审批、CLI backend 与 MCP 隔离",
+      "summary": "OpenClaw 在北京时间上午发布稳定版，新增 before_tool_call 异步 requireApproval，收拢 Claude CLI、Codex CLI、Gemini CLI 的 backend 接入，并通过生成的 MCP overlay 避免后台 Claude CLI 继承用户全局 MCP 服务器。",
+      "impact": "立即盘点默认插件加载、人工审批、MCP 继承和 sandbox 权限策略，先在多 provider 与多插件仓库灰度验证。",
+      "source": "GitHub Releases：openclaw/openclaw `v2026.3.28`"
+    },
+    {
+      "title": "Orca v1.0.61 补齐多 agent 工作台的 diff 与空闲态可见性",
+      "summary": "Orca 在北京时间早间发布 v1.0.61，补入 source control 文件拖拽、快捷键映射展示、diff 指示、图片 diff 预览、快速开文件导航与基于终端标题的 agent idle 提醒，重点提升多终端多 worktree 协作可见性。",
+      "impact": "评估多 agent 工作台时优先验证 diff、文件导航、source control 状态和空闲提醒能否支撑从任务到 PR 的完整流程。",
+      "source": "GitHub Releases：stablyai/orca `v1.0.61`"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260329.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
