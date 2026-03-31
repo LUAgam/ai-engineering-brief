@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260330",
+  "headline_summary": "北京时间 2026-03-30 可核实且直接影响工程实践的新增不多，正式重点集中在 agent 会话治理、多终端工作台稳定性和模型网关集成修复。最值得工程团队关注的是会话压缩与遥测可观测性、跨平台文件导航稳定性，以及第三方模型接入层的请求头一致性。",
+  "items": [
+    {
+      "title": "GitHub Copilot Chat 预览版补强会话压缩、OTel 指标与 session 跟踪",
+      "summary": "官方预览版继续收紧 IDE 内 agent session 的可运营能力，覆盖 compaction 阈值调整、transcript 行数摘要、agentic edit quality 遥测、工作区跟踪切换到 file watcher，以及 checkpoint 和 PR 检测相关改进。",
+      "impact": "将长会话压缩、编辑接受率、code survival 与工作区变更检测纳入回归和观测面板，重点验证 file watcher 替代后的稳定性。",
+      "source": "GitHub Releases：microsoft/vscode-copilot-chat"
+    },
+    {
+      "title": "Orca 同日双补丁集中修多终端文件检索、焦点处理与 Windows 兼容",
+      "summary": "Orca 在同一自然日连续发布 v1.0.65 和 v1.0.66，先后修复慢文件搜索导致冻结、quick-open 无结果、终端聚焦时快捷打开失效，以及 Windows 下 CRLF、跨盘符路径和 Monaco 查找组件稳定性问题。",
+      "impact": "把 quick-open、文件搜索、终端聚焦、CRLF 仓库与跨盘符工作区列入多 agent 工作台的最小可用性验收项，并做跨平台回归。",
+      "source": "GitHub Releases：stablyai/orca"
+    },
+    {
+      "title": "LangChain OpenRouter 0.2.1 修复 attribution headers 透传",
+      "summary": "LangChain 官方小版本将 OpenRouter 集成中的 attribution headers 改为通过 httpx default_headers 透传，同时刷新 model profile 数据并升级 partner 包依赖，重点影响统一模型网关下的归因和观测一致性。",
+      "impact": "核对升级前后请求头快照与日志报表，确认 attribution 相关字段已稳定透传，并评估是否可以移除现有手工补丁。",
+      "source": "GitHub Releases：langchain-ai/langchain"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260330.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
