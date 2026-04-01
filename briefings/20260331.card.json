@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260331",
+  "headline_summary": "昨日高价值新增主要落在 agent 工具链底座：编码 agent 的沙箱与认证控制、IDE 会话遥测治理，以及 Go Agent 框架的生产级能力补强。对工程团队更关键的不是新模型，而是可观测、可审计、可回归的落地能力继续完善。",
+  "items": [
+    {
+      "title": "OpenAI 为 Codex CLI 0.118.0 补强沙箱网络、动态凭证与 MCP 稳定性",
+      "summary": "官方 changelog 显示，Codex CLI 0.118.0 新增 Windows 沙箱仅代理出网、prompt+stdin 组合执行和短期 bearer token 动态刷新，并修复首次写入审批、Linux bwrap 识别与 MCP 启动告警可见性。",
+      "impact": "优先复核 CLI agent 的出网策略、短期凭证刷新和 MCP 启动失败告警，并补一轮受限沙箱与多工具场景回归。",
+      "source": "OpenAI Developers：Codex Changelog"
+    },
+    {
+      "title": "Copilot Chat 预览版继续把工作区元数据、会话连接与 compaction 做实",
+      "summary": "官方 release 显示，该预览版把 git branch、commit、remote、file path 等工作区元数据加入遥测，会话改为一次对话一个 WebSocket，并修正工具调用间的后台 compaction 与分支基线处理。",
+      "impact": "检查现有 Copilot 观测面是否已覆盖仓库、分支、文件和会话维度，并重点回归长会话、断连恢复与 PR 基线识别。",
+      "source": "GitHub Releases：microsoft/vscode-copilot-chat"
+    },
+    {
+      "title": "Google 发布 ADK Go 1.0，把 tracing、插件治理与人工确认前置到框架层",
+      "summary": "官方文章显示，ADK Go 1.0 新增 OpenTelemetry 集成、插件系统、Human-in-the-Loop 请求确认和 YAML 定义 Agent，并强调 Go、Java、Python 间的 A2A 协作与配置复用。",
+      "impact": "如果团队已有 Go 服务栈，可先做一个带 OTel、插件链和人工确认的最小 PoC，评估是否适合作为统一 agent 基座。",
+      "source": "Google Developers Blog：ADK Go 1.0 Arrives!"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260331.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
