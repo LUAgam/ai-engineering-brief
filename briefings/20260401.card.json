@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260401",
+  "headline_summary": "4月1日可核实且直接影响工程实践的新增不多，重点集中在编码 agent 权限治理、IDE agent 在取数失败时的编辑抑制，以及多终端 AI 工作台对隐藏配置文件与更新链路的稳定支持，适合工程团队做回归和灰度验证。",
+  "items": [
+    {
+      "title": "Claude Code v2.1.89 补齐 headless 权限治理与长会话稳定性",
+      "summary": "Claude Code v2.1.89 新增 `defer` 权限决策、`PermissionDenied` hook 和非阻塞 MCP 连接设置，并修复 symlink 路径校验、Windows CRLF 写回、多 schema 输出失败率和长会话恢复等问题。",
+      "impact": "优先补回归覆盖工具审批暂停恢复、MCP 启动超时、symlink 规则、Windows 写回和长会话 compaction。",
+      "source": "GitHub Releases：anthropics/claude-code v2.1.89"
+    },
+    {
+      "title": "Copilot Chat v0.42.2 收紧 fetch 失败后的错误编辑产出",
+      "summary": "Copilot Chat v0.42.2 修复 fetch 失败或取消时仍继续产出编辑的问题，并确保仅有 external ingest 的环境下 code search 仍可用，重点落在检索链路失败时的编辑抑制与搜索可用性。",
+      "impact": "为 IDE agent 增加网络抖动、请求取消和 external ingest-only 场景回归，确认失败后不再继续建议改动。",
+      "source": "GitHub Releases：microsoft/vscode-copilot-chat v0.42.2"
+    },
+    {
+      "title": "Orca v1.0.70 强化隐藏文件导航与更新链路可靠性",
+      "summary": "Orca v1.0.70 让 quick-open 支持检索隐藏文件，并修复 quit-and-install 前终端缓冲保留及 updater 版本比较逻辑，直接改善隐藏配置文件访问、升级复盘和版本判断稳定性。",
+      "impact": "把 `.github`、`.env*`、`.claude` 等隐藏路径纳入导航回归，并验证更新前日志保留与版本识别是否正确。",
+      "source": "GitHub Releases：stablyai/orca v1.0.70"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260401.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
