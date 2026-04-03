@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260402",
+  "headline_summary": "4月2日可核实且直接影响工程实践的新增不多，重点集中在编码 agent 的权限治理与恢复稳定性、AI 工作台对 worktree 和 PDF diff 的支持，以及预发布 CLI 在 sandbox、plan mode、subagent 稳定性上的持续收敛。",
+  "items": [
+    {
+      "title": "Claude Code v2.1.90 继续补强恢复链路、权限边界与 PowerShell 安全检查",
+      "summary": "Claude Code v2.1.90 修复 `--resume` 在 deferred tools、MCP servers、custom agents 场景下的完整 prompt-cache miss，收敛 format-on-save 编辑冲突、auto mode 越界执行，并加固 PowerShell 工具权限检查。",
+      "impact": "把显式用户边界、resume 恢复、format-on-save 和 PowerShell 权限规则加入回归，优先验证是否仍会越界执行或恢复退化。",
+      "source": "GitHub Releases：anthropics/claude-code v2.1.90"
+    },
+    {
+      "title": "Orca v1.0.72 补 worktree 外 git 操作、PDF diff 预览与分支名复用风险",
+      "summary": "Orca v1.0.72 支持在 repo/workspace root 之外的 worktree 执行 git 操作，新增 PDF diff 预览和行号远程 URL 拷贝，并防止 PR 历史里的分支名复用带来上下文混淆。",
+      "impact": "把 worktree outside roots、PDF diff 和分支名复用纳入工具验收项，重点验证多工作树和非代码制品审阅链路的稳定性。",
+      "source": "GitHub Releases：stablyai/orca v1.0.72"
+    },
+    {
+      "title": "Gemini CLI nightly 继续收敛 sandbox、plan mode 与 subagent 稳定性",
+      "summary": "Google Gemini CLI 的 nightly 预发布继续推进 Linux、macOS、Windows sandbox 动态扩展、forbiddenPaths、环境文件保护，以及 plan mode、subagent 和 headless 稳定性相关修复。",
+      "impact": "将其放入 nightly 灰度池，集中验证 sandbox 边界、plan file 创建、headless TTY、大输出崩溃保护和 subagent 历史完整性。",
+      "source": "GitHub Releases：google-gemini/gemini-cli v0.36.0-nightly.20260402.13ccc1645"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260402.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
