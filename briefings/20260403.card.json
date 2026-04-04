@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260403",
+  "headline_summary": "北京时间 2026-04-03 的高价值更新集中在编码 agent 的治理、隔离、恢复与并行协作：工具厂商不再只拼生成能力，而是在补多仓工作流、权限边界、审批作用域和运行时治理，这些变化会直接影响团队试点与平台接入策略。",
+  "items": [
+    {
+      "title": "Cursor 3 强化多仓并行与隔离工作流",
+      "summary": "Cursor 3 将 agent 工作台正式推进到多 repo、多 worktree、本地与云端协同形态，并新增 /worktree、/best-of-n、Await、团队级 secret 治理与更清晰的审计能力，明显转向团队级工程落地。",
+      "impact": "优先用真实多仓项目验证并行 agent、隔离 worktree、后台命令等待和团队 secret 管理是否满足现有开发流程。",
+      "source": "Cursor 官方博客 / 官方 Changelog"
+    },
+    {
+      "title": "Claude Code v2.1.91 收紧 skill 与恢复链路边界",
+      "summary": "Claude Code 新增 disableSkillShellExecution，允许团队关闭 skill、插件与自定义命令中的内联 shell 执行，同时修复 resume transcript 断链、远程 plan mode 丢失 plan file 等高风险流程问题。",
+      "impact": "尽快审查现有 skill 与插件是否需要默认禁用 inline shell，并补一轮 resume、远程 plan mode 与权限策略组合回归。",
+      "source": "GitHub Releases：anthropics/claude-code v2.1.91"
+    },
+    {
+      "title": "微软开源 Agent Governance Toolkit",
+      "summary": "微软发布 MIT 协议的 Agent Governance Toolkit，把策略执行、身份信任、执行环、SRE、合规证据与插件供应链治理做成可插现有 agent 框架的运行时治理层，强调覆盖 OWASP Agentic AI Top 10 风险。",
+      "impact": "按策略引擎、身份信任、熔断、审计和插件签名五个维度盘点现有 agent 系统缺口，评估 sidecar 或 middleware 接入路径。",
+      "source": "Microsoft Open Source Blog / GitHub"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260403.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
