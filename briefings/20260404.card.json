@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260404",
+  "headline_summary": "北京时间 2026-04-04 公开且可核实的工程更新不多，重点集中在 CLI agent 的治理、恢复与调试能力。Claude Code 强化 fail-closed 配置与 Linux 沙箱一致性，Codex alpha 则补远程 cwd、上下文注入控制和代理调试入口。",
+  "items": [
+    {
+      "title": "Claude Code v2.1.92：强化远程配置与 Linux 沙箱一致性",
+      "summary": "Claude Code v2.1.92 落在北京时间 4 月 4 日窗口内，新增 forceRemoteSettingsRefresh、Bedrock 交互式登录向导和更细的 /cost 拆分，同时修复 tmux 下 subagent 失效并恢复 Linux sandbox 的 seccomp helper。",
+      "impact": "优先验证远程策略拉取失败是否会阻断启动，并补 tmux 长会话、沙箱 helper 与大文件 Write diff 的回归。",
+      "source": "GitHub Releases：anthropics/claude-code v2.1.92"
+    },
+    {
+      "title": "OpenAI Codex alpha：补远程 cwd、上下文注入开关与调试可观测性",
+      "summary": "OpenAI Codex 在北京时间 4 月 4 日连续发布 3 个 alpha 版本，重点新增可关闭权限与环境上下文注入的配置开关、Responses API proxy 的 --dump-dir JSON dump，并修复远程 --cd 与 MCP 列表等问题。",
+      "impact": "若在灰度 Codex alpha，应单独验证 remote cwd、上下文注入开关、MCP 列表与 proxy dump，不要与稳定版共用验收口径。",
+      "source": "GitHub Releases / Compare：openai/codex rust-v0.119.0-alpha.9-.11"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260404.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
