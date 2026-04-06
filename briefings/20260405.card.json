@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260405",
+  "headline_summary": "北京时间 2026-04-05 头部厂商官方博客新增不多，真正过线的工程信号主要来自官方 GitHub Releases：opencode 连续两个稳定版补齐 review、MDM 与 npm 安装稳定性，Anthropic 的 claude-code-action 则继续收紧 GitHub Actions 中的安全边界、重试语义和仓库兼容性。",
+  "items": [
+    {
+      "title": "opencode 连续稳定版收敛 review 恢复、企业配置与 npm 安装问题",
+      "summary": "opencode 在北京时间 4 月 5 日连续发布 v1.3.14 和 v1.3.15，恢复基于 git 的 review mode 与 revert chain 快照恢复，新增 macOS MDM 托管配置，并修复 OpenAI-compatible provider 会话卡死及 node-gyp 相关 npm 安装失败问题。",
+      "impact": "优先在受管 macOS 设备和含 node-gyp 依赖的仓库回归验证 review、会话恢复与安装链路，再决定是否扩大团队 rollout。",
+      "source": "GitHub Releases：anomalyco/opencode"
+    },
+    {
+      "title": "claude-code-action v1.0.89 收紧 CI 安全边界并修复复杂仓库边角",
+      "summary": "Anthropic 的 claude-code-action 在北京时间 4 月 5 日发布 v1.0.89，修复无 token 时 revocation、OIDC 请求环境变量隔离、non-retryable error 重试、bun 安装后 rg 权限恢复，以及带 # 分支名和含 .gitmodules 仓库的恢复问题。",
+      "impact": "将 GitHub Actions 灰度版本升级到 v1.0.89，并补测 OIDC 隔离、复杂分支名、子模块仓库和 non-retryable error 的 CI 回归。",
+      "source": "GitHub Releases：anthropics/claude-code-action"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260405.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
