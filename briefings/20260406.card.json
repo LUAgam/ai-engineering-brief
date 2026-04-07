@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260406",
+  "headline_summary": "北京时间2026-04-06可核实且直接影响工程实践的头部厂商新增很少，本期真正值得工程团队跟进的只有两条：Cursor公开MoE decode内核研究，opencode连续两个稳定版继续补多云接入、ACP配置和Windows安装稳定性。",
+  "items": [
+    {
+      "title": "Cursor 发布 warp decode 研究，MoE decode 吞吐提升 1.84x",
+      "summary": "Cursor 官方博客披露，warp decode 将小 batch MoE decode 的并行组织从按 expert 改为按输出值分配 warp，在 B200 上实现 1.84x 吞吐提升，且结果更接近 FP32 参考，同时减少中间缓冲和多段数据整理开销。",
+      "impact": "给交互式推理流量单独建立 decode-only 基准，按 batch size、上下文长度和误差漂移做 A/B，比只看平均 QPS 更有落地价值。",
+      "source": "Cursor 官方博客"
+    },
+    {
+      "title": "opencode 连发 v1.3.16 / v1.3.17，继续补多云接入与安装稳定性",
+      "summary": "opencode 两个稳定版同日发布，先后修正 Azure 在 chat 与 responses 路径的模型选项、ACP 暴露的 session model 与 mode 配置、reasoning token 统计，以及 Windows 上 npm alias 或 git URL 插件安装和 Cloudflare 缺失环境变量时报错不清的问题。",
+      "impact": "把 Azure、Cloudflare、ACP session config、Windows 插件安装链路纳入多 provider smoke test，并单独跟踪配置缺失时的错误可诊断性。",
+      "source": "GitHub Releases（anomalyco/opencode）"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260406.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
