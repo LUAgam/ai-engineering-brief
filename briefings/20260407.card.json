@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260407",
+  "headline_summary": "北京时间 2026-04-07 可严格核实且直接影响工程实践的新增不多，重点集中在 MCP 客户端的认证恢复与安全硬化，以及 LLM 观测平台在实验回填、检索和评测稳定性上的运维化增强。",
+  "items": [
+    {
+      "title": "apify/mcp-cli 发布 v0.2.4，补强认证恢复与桥接稳定性",
+      "summary": "官方发布显示，v0.2.4 重点补上 OAuth token 刷新、unauthorized 前重试、bridge 崩溃后自动重连，并加入 Windows E2E 测试、XSS 与 shell injection 缓解以及文件权限加固。",
+      "impact": "建议把 token 过期、refresh 失败、bridge 崩溃恢复和 Windows 全链路接入加入 MCP 客户端回归门禁。",
+      "source": "GitHub Releases：apify/mcp-cli v0.2.4"
+    },
+    {
+      "title": "Langfuse 发布 v3.164.0，强化实验回填、检索与 trace 评分",
+      "summary": "官方发布显示，v3.164.0 新增对 input/output 的全文检索、trace 级评分列和更多导出字段，并继续为实验回填增加只读副本路由、8 小时窗口、超时、并发和异常日志控制。",
+      "impact": "建议尽快核查观测平台是否已隔离回填与在线查询，并为回填作业补上超时、窗口和并发阈值。",
+      "source": "GitHub Releases：langfuse/langfuse v3.164.0"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260407.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
