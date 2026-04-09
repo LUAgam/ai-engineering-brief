@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260408",
+  "headline_summary": "北京时间 2026-04-08，真正值得工程团队处理的新增不多，重点集中在代码评审 agent 的在线学习与 MCP 接入、Claude Code 的 Bedrock 鉴权回归修复，以及 Langfuse 对观测、评分与权限边界的生产化收紧。",
+  "items": [
+    {
+      "title": "Cursor Bugbot learned rules 与 MCP support 上线",
+      "summary": "Cursor 将 PR 中的 reaction、reply 和人工 reviewer 意见沉淀为 learned rules，并同步开放 Bugbot MCP support、Fix All 与 Autofix 降噪，推进代码评审 agent 的在线闭环。",
+      "impact": "优先在高 PR 量仓库验证误报率、采纳率、Autofix 成功率，并为 MCP 工具定义最小权限边界。",
+      "source": "Cursor Blog / Cursor Changelog"
+    },
+    {
+      "title": "Claude Code v2.1.96 修复 Bedrock 鉴权回归",
+      "summary": "Anthropic 发布 Claude Code v2.1.96，修复使用 AWS_BEARER_TOKEN_BEDROCK 或 CLAUDE_CODE_SKIP_BEDROCK_AUTH 时出现的 403 鉴权错误，直接指向企业 Bedrock 接入链路。",
+      "impact": "尽快对 Bedrock 路由做升级验证，并补齐 bearer token、skip-auth、代理链路和失效凭证回归。",
+      "source": "GitHub Releases: anthropics/claude-code v2.1.96"
+    },
+    {
+      "title": "Langfuse v3.165.0 收紧观测与权限边界",
+      "summary": "Langfuse 在 v3.165.0 中补上成本写入 clamp、超大 OTEL 请求告警、TEXT scores 公共 API，以及 LLM connection test 写权限校验，继续强化评测与排障基础设施。",
+      "impact": "检查观测平台的异常 cost、超大 payload 与连接测试权限控制，优先把 TEXT score 纳入真实评测流水线。",
+      "source": "GitHub Releases: langfuse/langfuse v3.165.0"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260408.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
