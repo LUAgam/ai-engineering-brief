@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260409",
+  "headline_summary": "北京时间2026-04-09头部厂商主站硬更新不多，真正值得工程团队跟进的新增主要来自官方 GitHub Releases，焦点集中在 Agent CLI 的权限边界、MCP 连接与 OAuth 恢复、工作树隔离，以及评测与标注平台的稳定性修补。",
+  "items": [
+    {
+      "title": "Claude Code v2.1.97 收紧 MCP 重连与权限恢复",
+      "summary": "Anthropic 在北京时间 4 月 9 日发布 Claude Code v2.1.97，重点修复 MCP HTTP/SSE 重连缓冲泄漏、OAuth 刷新失效、/resume 与 worktree 隔离等长会话稳定性问题，并继续收紧 Bash 工具与审批边界。",
+      "impact": "补测 MCP 重连、OAuth 刷新、/resume 与权限规则热更新，把 Agent CLI 接入纳入可观测与合规基线。",
+      "source": "GitHub Releases：anthropics/claude-code v2.1.97"
+    },
+    {
+      "title": "OpenClaw v2026.4.9 强化安全边界与 QA 评测",
+      "summary": "OpenClaw 在北京时间 4 月 9 日发布 v2026.4.9，新增 memory backfill、结构化 diary 和并行 QA 报告，同时修补 SSRF 绕过、不可信 .env 注入、远程 node 输出污染等运行时与安全问题。",
+      "impact": "优先回归浏览器目标检查、工作区 .env 注入、live QA 鉴权失败和 fresh install 场景，避免控制面被污染。",
+      "source": "GitHub Releases：openclaw/openclaw v2026.4.9"
+    },
+    {
+      "title": "OpenCode v1.4.1 把外部工作流拉回显式审批",
+      "summary": "OpenCode 在北京时间 4 月 9 日发布 v1.4.1，把 GitLab Duo Workflow 工具调用改为显式 permission prompt，并修复 clangd 根目录误判、same-origin 终端连接与 /providers、session shell 的 SDK 类型问题。",
+      "impact": "检查内部封装是否仍存在默认自动执行路径，并补跑 C/C++ 仓库与 same-origin 部署下的终端和 LSP 回归。",
+      "source": "GitHub Releases：anomalyco/opencode v1.4.1"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260409.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
