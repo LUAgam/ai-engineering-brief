@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260410",
+  "headline_summary": "北京时间 2026-04-10 可核实且直接影响工程实践的头部厂商公开新增不多，真正值得跟进的硬更新主要集中在官方 GitHub Releases。重点信号是 Agent CLI 权限收口、MCP/OAuth 接入稳定性、企业代码库兼容，以及评测队列与 tracing 校验修复。",
+  "items": [
+    {
+      "title": "Claude Code 连续补强企业接入、权限边界和恢复链路",
+      "summary": "Claude Code 在北京时间 4 月 10 日发布 v2.1.98 并跟进 v2.1.100，新增 Google Vertex AI 配置向导、Perforce 只读文件保护、后台脚本 Monitor、worktree 状态与 OTEL 传递，同时修复 Bash 权限绕过、MCP OAuth 刷新、additionalDirectories 热更新和 /resume 恢复等问题。",
+      "impact": "优先补测企业仓库、Perforce、MCP OAuth 重启后刷新、权限规则和 /resume 大文件恢复，把 Agent CLI 纳入可审计的最小权限基线。",
+      "source": "GitHub Releases：anthropics/claude-code"
+    },
+    {
+      "title": "OpenCode 把远程 MCP OAuth、子代理交互和 Bash 诊断补到更可用",
+      "summary": "OpenCode 在北京时间 4 月 10 日连续发布 v1.4.2 和 v1.4.3，修复 OpenAI OAuth 账户下 agent create 失败，支持远程 MCP server 自定义 OAuth redirect URI，并让 subagents 更早可点击查看、桌面连接减少强制等待，Bash 中断后也能保留最终输出与截断细节。",
+      "impact": "检查远程 MCP 回跳配置，并给 OAuth 建 agent、子代理查看、桌面连接和中断 Bash 留痕补一轮端到端回归，降低远程协作排障成本。",
+      "source": "GitHub Releases：anomalyco/opencode"
+    },
+    {
+      "title": "Langfuse 连发补丁，优先修评测队列、Tracing 与连接校验",
+      "summary": "Langfuse 在北京时间 4 月 10 日连发 v3.167.1、v3.167.2、v3.167.3，修复 Scores API Bearer auth、LLM base URL 校验、Azure Blob container 校验、Slack 集成与 Unicode 注册问题，并处理 llm-as-a-judge 队列阻塞、tracing 环境注入、本地 cloud dependencies 脚本和 ClickHouse 运行用户等细节。",
+      "impact": "核对自建 Langfuse 的鉴权、base URL、存储命名和 ClickHouse 假设，并针对 llm-as-a-judge 队列与 tracing 上报补高并发验证。",
+      "source": "GitHub Releases：langfuse/langfuse"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260410.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
