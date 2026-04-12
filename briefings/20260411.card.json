@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260411",
+  "headline_summary": "北京时间2026-04-11头部厂商可核实硬更新仍然不多，最值得工程团队跟进的信号集中在 OpenAI 对 Axios 供应链事件的官方处置、Microsoft Agent Framework 发版，以及 Agent CLI 与平台在稳定性、安全边界和测试通道上的持续收紧。",
+  "items": [
+    {
+      "title": "OpenAI 响应 Axios 供应链事件并轮换签名证书",
+      "summary": "OpenAI 公告披露，受 Axios 恶意版本影响，其 macOS app-signing GitHub Actions 工作流曾下载并执行恶意依赖。虽然未发现用户数据或产品被攻破证据，但仍将旧证书按可能暴露处理，并要求 ChatGPT Desktop、Codex 与 Atlas 升级到安全版本。",
+      "impact": "立即审计签名与发布流水线，清理 floating tag、未锁 commit 和无包龄门槛的依赖拉取步骤，并补演练证书轮换与旧版本失效响应。",
+      "source": "OpenAI Blog：Our response to the Axios developer tool compromise"
+    },
+    {
+      "title": "Microsoft Agent Framework .NET 1.1.0 推进技能发现与会话管理",
+      "summary": "Microsoft 在北京时间 4 月 11 日发布 Agent Framework .NET 1.1.0，新增 class-based skills 的 reflection discovery，并补上 skill resource 与 script functions 的 custom types 支持；同时增强 FoundryAgent 会话管理，修复 checkpoint restoration、chat history compaction duplication 和多个 workflow/sample 问题。",
+      "impact": "优先验证 reflection discovery、custom types、CreateSessionAsync(conversationId) 和 checkpoint 恢复链路，减少手工技能注册代码并补齐长 workflow 回归。",
+      "source": "GitHub Releases：microsoft/agent-framework dotnet-1.1.0"
+    },
+    {
+      "title": "OpenClaw v2026.4.10 把记忆、审批、QA 与安全治理一起推进",
+      "summary": "OpenClaw 在北京时间 4 月 11 日发布 v2026.4.10，加入 bundled Codex provider、Active Memory、exec-policy 命令与 commands.list RPC，并新增 Matrix、Telegram live QA lane 和 Multipass 隔离回归通道；同时继续收紧浏览器导航、防越权主机媒体读取和插件安装扫描等安全边界。",
+      "impact": "把 exec policy、live QA、browser SSRF、防越权 host media read 和隔离回归纳入默认门禁，再评估 Active Memory 与 Codex provider 的小流量试点。",
+      "source": "GitHub Releases：openclaw/openclaw v2026.4.10"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260411.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
