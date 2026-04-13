@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260412",
+  "headline_summary": "北京时间2026-04-12头部厂商官方博客未见足够硬的新工程正文，当天更有价值的信号来自两条官方GitHub Release，分别聚焦多平台Agent运行时的OAuth、QA与超时治理，以及模型网关的输入校验、路径安全与监控口径变更。",
+  "items": [
+    {
+      "title": "OpenClaw 发布 v2026.4.11，继续收口 OAuth、QA 门禁与子代理输出边界",
+      "summary": "该版新增 GPT-5.4 对 Opus 4.6 的 parity report gate 与插件 setup descriptor，并修复 Codex OAuth invalid_scope、父流泄露子代理 commentary、显式 run timeout 与 QA 打包边界问题。",
+      "impact": "优先回归 OAuth 重授权、父子代理流隔离、显式超时和 QA 门禁，避免协调元信息泄露到用户可见链路。",
+      "source": "GitHub Releases：openclaw/openclaw v2026.4.11"
+    },
+    {
+      "title": "LiteLLM 发布 v1.83.7.rc.1，提示监控桶变更并加强网关安全与权限治理",
+      "summary": "该版明确提示 LATENCY_BUCKETS 从 35 档降到 18 档会影响 Prometheus 查询，同时加强管理端输入校验、参数化 token 查询、archive 路径解析，并补齐 trace 元数据与 spend/logs 权限对齐。",
+      "impact": "升级前先检查 Prometheus `le` 查询、管理 API 校验、压缩包路径安全和团队级 spend/logs 权限回归。",
+      "source": "GitHub Releases：BerriAI/litellm v1.83.7.rc.1"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260412.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
