@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260413",
+  "headline_summary": "4月13日可严格落在北京时间窗口的硬更新不多，最终保留3条官方 GitHub Release：OpenClaw 收紧执行策略与插件边界，CrewAI 前移部署校验并补安全修复，Mem0 处理记忆层破坏性升级与结构化输出兼容。",
+  "items": [
+    {
+      "title": "OpenClaw v2026.4.12 收紧执行策略、插件边界与回归跑道",
+      "summary": "官方 release 显示该版新增 Active Memory 插件、exec-policy 命令和可在一次性 Linux VM 中执行的 QA 跑道，并修复审批放行、shell 注入、示例凭证上线和 commentary 泄漏等问题。",
+      "impact": "把执行审批、插件按需激活、占位密钥清理和长任务保活纳入升级前检查，并补一次性 VM 与真实渠道回归。",
+      "source": "GitHub Releases：openclaw/openclaw v2026.4.12"
+    },
+    {
+      "title": "CrewAI 1.14.2a3 增加 deploy validation CLI 并修 strict mode",
+      "summary": "这版 alpha 加入 deploy validation CLI，改进 LLM 初始化体验，同时修补 pypdf、uv、requests 相关安全问题，并修复 Bedrock tool 参数丢失、strict mode schema 清洗和记忆序列化测试 flaky。",
+      "impact": "先把 deploy validation CLI 接入 CI 或发布前脚本，并补 Bedrock tool calling、strict mode schema 与依赖升级后的集成回归。",
+      "source": "GitHub Releases：crewAIInc/crewAI 1.14.2a3"
+    },
+    {
+      "title": "Mem0 Python SDK v2.0.0b0 清理废弃参数并修记忆异常路径",
+      "summary": "该 beta 移除 enable_graph 等一批历史废弃参数，要求旧封装和配置同步收口；同时为 hallucinated ID 增加防护、支持 Azure OpenAI 透传 response_format，并下调 OSS 热路径 telemetry 采样。",
+      "impact": "先排查内部 wrapper 是否仍依赖旧参数，再用伪造 ID、structured output 和高频 memory 操作补异常路径回归。",
+      "source": "GitHub Releases：mem0ai/mem0 v2.0.0b0"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260413.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
