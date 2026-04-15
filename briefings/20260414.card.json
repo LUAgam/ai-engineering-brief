@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260414",
+  "headline_summary": "北京时间 2026-04-14 可核实的高价值工程更新不多，重点集中在 Agent 平台安全边界、GitHub/MCP 工作流能力与浏览器自动化执行栈的生产化收口；入选内容均来自官方 GitHub Release，时间边界更稳。",
+  "items": [
+    {
+      "title": "OpenClaw 发布 v2026.4.14，补 GPT-5.4 兼容、执行超时与多渠道安全边界",
+      "summary": "OpenClaw 在 4 月 14 日的官方 Release 同时补了 GPT-5.4/Codex/Ollama 兼容问题，并收紧 Slack、Teams、Feishu、浏览器截图与 CDP 路由的 allowlist 和 SSRF 边界，还修复了 markdown 渲染导致的 ReDoS 风险。",
+      "impact": "优先审计内部 Agent 网关是否允许模型侧改高风险配置，并补跑 SSRF、跨渠道鉴权、慢请求超时和恶意 markdown 回归。",
+      "source": "GitHub Releases（openclaw/openclaw v2026.4.14）"
+    },
+    {
+      "title": "GitHub MCP Server 连发 0.33.0 / 0.33.1，补齐 review thread 与最小权限控制",
+      "summary": "GitHub MCP Server 新增 resolve review threads、`list_commits` 的 path/since/until 过滤参数，并把 OSS issue/PR 工具集拆得更细；同时将 HTTP 模式下静态 CLI flags 固定为请求级过滤上界，0.33.1 为同日热修。",
+      "impact": "如有自托管 GitHub MCP Server，升级目标应直接对齐 0.33.1，并重点验证 review thread 闭环、提交筛选和 HTTP 权限上界是否生效。",
+      "source": "GitHub Releases（github/github-mcp-server v0.33.0 / v0.33.1）"
+    },
+    {
+      "title": "Cloudflare Agents 发布 agents@0.11.0，把浏览器 CDP 工具拉进 Agent SDK 执行栈",
+      "summary": "Cloudflare Agents 新增实验性的 browser CDP tools，直接走 Browser Rendering live protocol；同批次 `@cloudflare/think` 增加一等公民浏览器工具，并明确补上基于 Wrangler 的端到端测试覆盖。",
+      "impact": "如果已在 Workers 或 Cloudflare 侧运行 Agent，可评估用官方 browser tools 替换部分自写 Playwright/CDP 胶水，并补做真实协议链路回归。",
+      "source": "GitHub Releases（cloudflare/agents agents@0.11.0；@cloudflare/think@0.2.2）"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260414.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
