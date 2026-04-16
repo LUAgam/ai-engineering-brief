@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260415",
+  "headline_summary": "北京时间 2026-04-15，能稳定落入时间边界且对工程实践直接有帮助的新增不多，重点集中在 Gemini API 成本治理、Claude SDK 迁移信号，以及 Cursor 把 Agent 输出升级为可复用交互工件，值得开发、测试与平台团队优先评估。",
+  "items": [
+    {
+      "title": "Google 推出 Gemini API 预付费计费",
+      "summary": "Google 在 AI Studio 为 Gemini API 引入预付费计费，新建并启用 Gemini API 的美国 Billing Account 可先充值再消费，并与 Spend Caps、Usage Tiers 配套，帮助团队更早锁定预算。",
+      "impact": "优先梳理实验项目和共享测试环境的 Gemini 用量，把余额告警、自动充值和额度耗尽演练纳入成本治理流程。",
+      "source": "Google Blog"
+    },
+    {
+      "title": "Anthropic SDK 释放 Sonnet/Opus 4 弃用信号",
+      "summary": "Anthropic 在 Python 0.95.0 与 TypeScript 0.89.0 两个官方 SDK 中同时标记 Sonnet 4 和 Opus 4 为 deprecated，TS 版还补了 streaming 缺失事件，Python 版调整了 Bedrock 鉴权处理。",
+      "impact": "尽快扫描代码中的 Claude 模型 ID，并补跑流式输出、Bedrock 接入和模型枚举回归，避免依赖升级后被动迁移。",
+      "source": "GitHub Releases"
+    },
+    {
+      "title": "Cursor Canvases 把 Agent 结果变成交互式工件",
+      "summary": "Cursor 新增 Canvases，让 agent 直接生成带表格、图表、diff 和 to-do 的持久化交互界面，并能与 skills 结合，稳定输出报告、排障和评测分析等固定视图。",
+      "impact": "可先挑选 PR review、故障复盘或 eval 分析等高频流程，试做成 canvas skill，提升团队复用和审阅效率。",
+      "source": "Cursor Blog"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260415.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
