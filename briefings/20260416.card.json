@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260416",
+  "headline_summary": "北京时间 2026-04-16 的高价值新增主要集中在四个工程方向：Agent 沙箱运行时、编码代理插件与多终端工作流、Copilot 模型迁移带来的成本与兼容性变化，以及 skills 的版本治理与供应链控制，重点已从模型能力转向工程化落地。",
+  "items": [
+    {
+      "title": "OpenAI Agents SDK 落地 Sandbox Agents",
+      "summary": "OpenAI 在北京时间 4 月 16 日发布 openai-agents-python v0.14.0，把 SandboxAgent、Manifest、SandboxRunConfig、快照与恢复、挂载与内建工具能力一起纳入官方 SDK，agent 运行时开始从拼装态转向可控沙箱。",
+      "impact": "优先验证工作区挂载、失败恢复、权限边界和审计日志，评估是否能用官方沙箱抽象替代部分自研 harness。",
+      "source": "OpenAI GitHub Releases"
+    },
+    {
+      "title": "OpenAI Codex 0.121.0 前移插件、MCP 与记忆治理",
+      "summary": "OpenAI 在北京时间 4 月 16 日发布 Codex 0.121.0，把插件市场、MCP Apps tool calls、memory mode 与 reset、安全 devcontainer、文件系统元数据等能力一起推进，Codex 继续从终端工具扩展为跨工作流代理工作台。",
+      "impact": "尽快补齐插件白名单、记忆清理、远端连接准入和高权限连接器隔离，避免代理扩权快于治理能力建设。",
+      "source": "OpenAI GitHub Releases"
+    },
+    {
+      "title": "GitHub CLI 推出 gh skill 管理 agent skills",
+      "summary": "GitHub 在 4 月 16 日发布 gh skill 公测命令，支持发现、安装、更新、发布 agent skills，并提供 tag 或 commit pin、tree SHA 追踪、frontmatter 来源记录和 immutable releases 建议，skills 开始进入接近包管理器的治理阶段。",
+      "impact": "可先把 CI 排障、回归检查等高频流程沉淀为内部 skill，并强制 tag 或 SHA pin 与人工审查脚本来源。",
+      "source": "GitHub Changelog"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260416.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
