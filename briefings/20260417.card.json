@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260417",
+  "headline_summary": "4月17日真正值得工程团队处理的新增不多，重点集中在三件事：Claude Design 开始把设计到代码交接串成链路，GitHub CLI 用 gh skill 把 agent skills 带入可安装可审计治理，Android 官方则为任意 agent 提供更标准的 CLI 工作面。",
+  "items": [
+    {
+      "title": "Claude Design 将设计原型与 Claude Code handoff 串到同一流程",
+      "summary": "Anthropic 将 Claude Design 定位为可从文本、图片、文档、网站或代码库生成设计稿的工具，并可自动带入品牌系统与组件信息，最终把原型和上下文打包交给 Claude Code 继续实现。",
+      "impact": "先在一个已有设计系统的页面上验证设计产物、handoff bundle、代码实现和视觉回归能否形成稳定闭环。",
+      "source": "Anthropic News"
+    },
+    {
+      "title": "GitHub CLI 用 gh skill 把 agent skills 带入可安装可 pin 的治理阶段",
+      "summary": "GitHub CLI 2.90.0 新增 gh skill，可发现、安装、更新和发布遵循 Agent Skills 规范的技能，并把 tag、commit pin、tree SHA 检测与 frontmatter 溯源一起纳入分发链路。",
+      "impact": "优先把 CI 排障、依赖升级审查等高频动作沉淀为内部 skill，并默认要求 tag 或 commit pin 后再推广。",
+      "source": "GitHub Releases"
+    },
+    {
+      "title": "Android CLI 与 skills 为任意 agent 提供更标准的 Android 开发入口",
+      "summary": "Android 官方把 Android CLI 定义为更高效构建 Android 应用的命令行接口，覆盖项目创建、模拟器管理、运行、布局提取、文档检索与 skills 安装，降低 agent 猜命令和用旧文档的概率。",
+      "impact": "在真实 Android 项目里先验证 init、create、docs search、emulator 和 skills add 是否确实减少错误操作与回归成本。",
+      "source": "Android Developers Blog"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260417.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
