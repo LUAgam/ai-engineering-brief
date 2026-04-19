@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260418",
+  "headline_summary": "4月18日高置信更新不多，重点集中在三条工程信号：GitHub Copilot CLI 把模型自动路由正式做成默认能力；Google 在 Android 上推进端云混合推理；A2UI v0.9 则继续把生成式 UI 往协议层和现有设计系统接入推进。",
+  "items": [
+    {
+      "title": "GitHub Copilot CLI 支持 Auto Model Selection",
+      "summary": "GitHub 将 Copilot CLI 的 auto 模式开放给全部 Copilot 计划，允许按计划与管理员策略在多种模型间自动路由，并同时给出实际使用模型展示、手动切回指定模型和计费折扣等约束。",
+      "impact": "先为高频 CLI 任务建立模型路由基线，对比 auto 与固定模型在成功率、耗时和 premium request 消耗上的差异，再决定默认策略。",
+      "source": "GitHub Changelog"
+    },
+    {
+      "title": "Android 混合推理 API 支持端侧与云侧动态切换",
+      "summary": "Google 在 Android 侧发布 Firebase AI Logic 的 hybrid inference API，让应用可通过统一接口在设备本地的 Gemini Nano 与云端 Gemini 模型之间切换，并给出明确依赖版本与模式示例。",
+      "impact": "优先补做在线、离线、弱网和低端机回退测试，验证端云路由在成功率、延迟、耗电和设备兼容性上的真实表现。",
+      "source": "Android Developers Blog"
+    },
+    {
+      "title": "A2UI v0.9 推进生成式 UI 协议层接入",
+      "summary": "Google Developers Blog 发布 A2UI v0.9，强调把 agent 的 UI intent 与具体前端框架解耦，并补充 web-core、React renderer、Agent SDK、version negotiation、dynamic catalogs 与多种 transport 接入能力。",
+      "impact": "不要继续只让模型直接生成页面代码，先梳理 design system 的 catalog、schema 和 renderer 契约，再评估是否引入 A2UI 作为协议层。",
+      "source": "Google Developers Blog"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260418.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
