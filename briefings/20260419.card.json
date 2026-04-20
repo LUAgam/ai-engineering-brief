@@ -1,0 +1,21 @@
+{
+  "briefing_date": "20260419",
+  "headline_summary": "北京时间 2026-04-19，可核实且直接影响工程实践的硬更新不多，重点集中在开源编码与 Agent 工具的官方 Release。最值得关注的是搜索、附件识别、会话隔离、token 用量统计和浏览器控制等基础能力正在被集中修补。",
+  "items": [
+    {
+      "title": "OpenCode 连发 v1.14.17 / v1.14.18，集中修补搜索、附件识别和构建链路",
+      "summary": "OpenCode 在 4 月 19 日连续发布两个 patch 版本，先修 Docker 可执行位、插件重装、图片/PDF 识别、遥测标签和安装路径问题，随后恢复原生 ripgrep 后端，让文件搜索和文件列表重新稳定可用。",
+      "impact": "优先升级并补测仓库搜索、附件读取、Docker 构建和安装链路，把检索稳定性纳入日常回归基线。",
+      "source": "OpenCode 官方 GitHub Release"
+    },
+    {
+      "title": "OpenClaw 连发 2026.4.19 两个 beta，修多 Agent 会话隔离与 usage 统计",
+      "summary": "OpenClaw 在 4 月 19 日连发两个 beta 预发布，重点修复跨 agent 子任务账号绑定、Codex token 误算、远程 CDP 健康检查，以及流式请求 usage 上报、会话级并发隔离和缺失 usage 元数据时的状态保留。",
+      "impact": "若在试用 beta，应优先回归多账号共享环境、跨 agent 派生、本地兼容后端和远程浏览器控制路径。",
+      "source": "OpenClaw 官方 GitHub Release"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260419.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
