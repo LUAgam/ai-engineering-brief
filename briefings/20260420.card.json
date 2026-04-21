@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260420",
+  "headline_summary": "北京时间 2026-04-20，可核实且直接影响工程实践的新增不多，重点集中在编码 Agent 稳定性修复，以及 Cloudflare 对 AI 代码评审、MCP 治理、AGENTS.md 与成本观测的生产化披露。",
+  "items": [
+    {
+      "title": "OpenCode 发布 v1.14.19，修复启动故障并明确上下文压缩语义",
+      "summary": "OpenCode 于北京时间 4 月 20 日发布 v1.14.19，核心修复包括消除 session schema 循环依赖导致的启动失败，并将 compaction 配置改名为 preserve_recent_tokens，减少长会话和上下文治理中的误配风险。",
+      "impact": "建议尽快统一升级并补测启动、长会话恢复和上下文压缩行为，把相关参数同步进团队模板与排障文档。",
+      "source": "OpenCode 官方 GitHub Release"
+    },
+    {
+      "title": "Cloudflare 披露 CI 原生 AI Code Review 架构",
+      "summary": "Cloudflare 官方文章显示，其 AI 代码评审已采用最多 7 个专用 reviewer 协同工作，并结合风险分级、diff 噪音过滤、熔断回退、增量复审和 AGENTS.md 检查，把 AI review 放入真实 MR 流程。",
+      "impact": "建议先在单仓库 PoC 风险分级和结构化评审输出，重点跟踪误报率、漏报率、等待时长和人工推翻比例。",
+      "source": "Cloudflare 官方博客"
+    },
+    {
+      "title": "Cloudflare 公布内部 AI 工程栈治理蓝图",
+      "summary": "Cloudflare 披露其内部 AI 工程栈已形成统一代理入口、AI Gateway 成本治理、MCP Portal、Backstage 知识图谱和 AGENTS.md 闭环，且约 3900 个仓库已批量生成上下文文件，治理思路清晰可复用。",
+      "impact": "建议先收口 AI 工具入口，统一认证、模型路由和成本归因，并在关键仓库补齐 AGENTS.md 与上下文更新检查。",
+      "source": "Cloudflare 官方博客"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260420.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
