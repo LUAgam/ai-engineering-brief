@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260421",
+  "headline_summary": "4月21日可核实的工程更新不多，但两条头部厂商动向很清晰：OpenAI开始产品化Codex企业落地路径，Google把Deep Research升级为支持MCP与图表输出的研究型API；同时，Cisco公开案例显示，AI提效正与质量门禁一起设计。",
+  "items": [
+    {
+      "title": "OpenAI 推出 Codex Labs，推进 Codex 企业级落地",
+      "summary": "OpenAI 宣布推出 Codex Labs，并联合多家系统集成商扩展 Codex 在工程组织中的部署。文中披露 Codex 周活开发者已超 400 万，落地点覆盖测试覆盖率提升、代码评审、大仓库理解和事故响应等场景。",
+      "impact": "将 coding agent 试点拆成代码生成、测试补齐、代码评审、故障排查等节点分别评估，并优先补齐权限、审计和回退治理。",
+      "source": "OpenAI 官方博客"
+    },
+    {
+      "title": "Google 发布 Deep Research / Deep Research Max",
+      "summary": "Google 将 Deep Research 升级为面向 Gemini API Interactions API 的研究型 agent，支持远程 MCP、多工具并行、私有资料输入，以及原生图表和信息图输出，并区分低延迟与高完整度两类任务模式。",
+      "impact": "优先选一类需要长链路检索、私有资料接入和可引用结论的任务做 PoC，验证来源覆盖度、可追溯性和交付时长。",
+      "source": "Google 官方博客"
+    },
+    {
+      "title": "Cisco 公开案例强调 agent 修复闭环要与质量验证一起设计",
+      "summary": "Sonar 披露的公开案例显示，Cisco 用自主 agent 处理 Jira 与 SonarQube 问题，并采用 Investigate、Plan、Implement 三段式流程，在三个月内清理约 27000 个技术债问题，重点在于把计划、执行与验证拆开。",
+      "impact": "从低风险静态分析规则入手，试跑调查、计划、执行、验证分段闭环，先比较误改率、回归率和人工 review 成本。",
+      "source": "Sonar 官方博客"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260421.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
