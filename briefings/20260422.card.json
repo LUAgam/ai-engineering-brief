@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260422",
+  "headline_summary": "北京时间 2026-04-22 是头部厂商的密集更新日，方向高度集中在工程基础设施而非模型本身。OpenAI 一日内连发 Responses API WebSocket 模式、Workspace agents 与开源 Privacy Filter，分别对应 agent 时延、组织级落地与数据治理；Google 推出 Agents CLI，把 agent 从原型到生产串成一条命令；GitHub Copilot 在 VS Code 正式开放 BYOK。整体信号是所有头部厂商都在加固 agent 进入企业的接口层、数据层和治理层。",
+  "items": [
+    {
+      "title": "OpenAI Responses API 推出 WebSocket 模式：agent rollout 端到端时延降低 40%",
+      "summary": "OpenAI 在 Responses API 中正式启用 WebSocket 长连接，复用 previous_response_id 在内存中的缓存，避免每个回合重复处理全量上下文。Codex 主流量已切到 WebSocket，GPT-5.3-Codex-Spark 在 Cerebras 硬件上跑到约 1000 TPS、峰值 4000 TPS；Vercel AI SDK、Cline、Cursor 内的 OpenAI 模型分别报告 30%~40% 的延迟下降，且无需修改 input/output 形状。",
+      "impact": "盘点现有 Responses API agent 中“多回合短增量上下文”路径，优先在这些路径上做 WebSocket A/B；同时确认网关、负载均衡和可观测性栈对长连接友好，再考虑全量切流。",
+      "source": "OpenAI 官方博客 Speeding up agentic workflows with WebSockets in the Responses API"
+    },
+    {
+      "title": "OpenAI 推出 Workspace agents：Codex 驱动的团队级共享 agent，带管理员策略与 Compliance API",
+      "summary": "Workspace agents 是 GPTs 的进化形态，由 Codex 提供底层能力，可在云端持续运行、按计划触发或部署到 Slack。面向 ChatGPT Business / Enterprise / Edu / Teachers 的 Research Preview，5 月 6 日前免费、之后按 credit 计费。管理员可控制可用连接器与动作，敏感动作可强制人工审批，Compliance API 提供 agent 配置、变更与运行的完整可见性，并内置 prompt injection 防护。",
+      "impact": "选 1~2 个跨工具高频流程（周报、值班、合规筛查）做 workspace agent 试点，提前确认 Compliance API、连接器审批与人工审批能挂上你们现有治理体系，再决定企业级 rollout。",
+      "source": "OpenAI 官方博客 Introducing workspace agents in ChatGPT"
+    },
+    {
+      "title": "OpenAI 开源 Privacy Filter：1.5B/50M 激活的 PII 检测模型，可本地跑、Apache 2.0",
+      "summary": "Privacy Filter 是双向 token 分类 + 约束 Viterbi span 解码的小模型，单次前向标注全文，最长支持 128k token，覆盖 private_person、private_address、account_number、secret 等 8 类标签，包含 API key、密码、银行账号等敏感场景。在 PII-Masking-300k 上 F1 达到 96%（修正标注后 97.43%），权重已在 Hugging Face 与 GitHub 以 Apache 2.0 开源，可本地部署避免数据外发。",
+      "impact": "在最敏感的一条数据流（推理日志或客服对话）上跑 Privacy Filter 与现有正则/SaaS 的召回与误删对比；同时把它嵌入 RAG 入库前的清洗管线，量化历史泄露风险，但保留人工 review 通道。",
+      "source": "OpenAI 官方博客 Introducing OpenAI Privacy Filter"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260422.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
