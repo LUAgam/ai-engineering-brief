@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260423",
+  "headline_summary": "今日头部厂商集中发声且方向清晰：OpenAI 推出 GPT-5.5 / GPT-5.5 Pro，长链路编码与计算机使用 eval 全面刷新，并强调 token 效率而非堆量；Anthropic 公开 Claude Code 三连环 postmortem，模型权重未退化、问题在 harness 与缓存与 system prompt；DeepSeek 同日开源 DeepEP V2 与 TileKernels，把 MoE 训练侧通信库与 GPU kernel 一并放出。整体信号是 agent 的 SDLC 化与基础设施层透明度。",
+  "items": [
+    {
+      "title": "OpenAI 发布 GPT-5.5 / GPT-5.5 Pro：长链路编码全面刷新且更省 token",
+      "summary": "GPT-5.5 与 Pro 已通过 ChatGPT 与 Codex 全量推送，API 即将上线。Terminal-Bench 2.0 82.7%、Expert-SWE 73.1%、SWE-Bench Pro 58.6%、OSWorld-Verified 78.7%、Tau2-bench Telecom 98.0%；长上下文方面 Graphwalks BFS 1M F1 从 9.4% 升至 45.4%。官方明确 Codex 上用更少 token 完成同样任务，单 token 延迟与 GPT-5.4 持平。",
+      "impact": "在 Codex 上对自家长任务做 5.4→5.5 A/B，记录无需人工干预步骤数与输出 token 数；API 上线后再做线上灰度，关键链路先小流量验证。",
+      "source": "OpenAI 官方博客：Introducing GPT-5.5 / GPT-5.5 System Card / GPT-5.5 Bio Bug Bounty"
+    },
+    {
+      "title": "Anthropic 公开 Claude Code 三连环 postmortem：模型权重没退化，是 harness 出问题",
+      "summary": "Anthropic 拆出三处独立缺陷：3/4 默认 effort 从 high 降到 medium（4/7 回退）、3/26 thinking-cache 优化误成每回合都清旧 reasoning 致用量异常（4/10 修复）、4/16 system prompt 限制输出长度致 Opus 4.6/4.7 各掉 3%（4/20 回退）。所有问题在 v2.1.116 已修复，今日同步重置全部订阅用户用量上限。",
+      "impact": "升级 Claude Code 到 v2.1.116+ 并复核 effort 默认值；对内部封装 LLM 的 prompt/cache/harness 改动按模型权重变更级别走 ablation 与灰度。",
+      "source": "Anthropic 官方：An update on recent Claude Code quality reports（engineering/april-23-postmortem）"
+    },
+    {
+      "title": "DeepSeek 同日开源 DeepEP V2 与 TileKernels：MoE 训练通信库与 GPU kernel 一并放出",
+      "summary": "DeepEP V2 是 expert-parallel 通信库整体重写，相比 V1 取得最高 1.3× 峰值性能、SM 资源占用最高降低 4×，引入 fully JIT、NCCL Gin backend，支持 EP2048。TileKernels 基于 TileLang 提供 MoE 路由、gating、FP8/FP4/E5M6 量化、Engram 与 Manifold HyperConnection kernel，目标绕开 CUTLASS 直接面向 Hopper / Blackwell tile 架构。",
+      "impact": "自研 MoE 训练或 H100/B200 推理优化的团队安排 1 人对两个仓库做小规模 PoC，验证 SM 占用、router 时延与量化 GEMM 性能是否符合官方报告。",
+      "source": "GitHub：deepseek-ai/DeepEP（V2）与 deepseek-ai/TileKernels"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260423.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
