@@ -1,24 +1,24 @@
 {
   "briefing_date": "20260424",
-  "headline_summary": "DeepSeek 开源 V4-Pro/Flash，1M 上下文 + 混合注意力 + FP4 QAT；GitHub Copilot 全产品线 GA GPT-5.5、JetBrains 同步拿到 inline agent 与全局 Auto Approve；Cursor 3.2 把 Multitask 子智能体、Worktrees、Multi-root Workspaces 装进 Agents Window；同日 GitHub Copilot 个人交互数据训练策略生效，App installation token 格式即将变更。",
+  "headline_summary": "DeepSeek 开源 V4-Pro/Flash，1M 上下文 + FP4 QAT；Copilot GPT-5.5 全产品 GA、JetBrains 上 inline agent；Cursor 3.2 上 Multitask。",
   "items": [
     {
-      "title": "DeepSeek 开源 V4 系列：1M 上下文 + 混合注意力 + FP4 QAT",
-      "summary": "V4-Pro（1.6T/49B）与 V4-Flash（284B/13B）MIT 授权同日发布，1M 原生上下文、最大 384K 输出。CSA + HCA 混合注意力把 1M 上下文下 KV 缓存压到 V3.2 的 10%、单 token FLOPs 27%；NVIDIA Blackwell Day-0 接入，vLLM/SGLang 提供低延迟与多机配方。",
-      "impact": "在 build.nvidia.com 跑 V4-Pro 长上下文用例做横评；在自家 Blackwell/Hopper 节点用 vLLM 起 V4-Flash 算 tokens/sec/$，评估能否承载内部 agent 任务。",
-      "source": "Hugging Face：deepseek-ai/DeepSeek-V4-Pro / V4-Flash；NVIDIA Developer Blog"
+      "title": "DeepSeek 开源 V4：1M 上下文 + 混合注意力 + FP4 QAT",
+      "summary": "V4-Pro（1.6T/49B）与 V4-Flash（284B/13B）MIT 同日发布，1M 原生上下文。CSA+HCA 把 1M KV 压到 V3.2 的 10%，NVIDIA Blackwell Day-0 接入。",
+      "impact": "build.nvidia.com 跑 V4-Pro 长上下文横评；自家 Blackwell 用 vLLM 起 V4-Flash 算 tokens/sec/$。",
+      "source": "Hugging Face：DeepSeek-V4；NVIDIA Developer Blog"
     },
     {
-      "title": "GitHub Copilot GPT-5.5 全面 GA，JetBrains 拿到 inline agent",
-      "summary": "GPT-5.5 在 Copilot Pro+/Business/Enterprise 上覆盖 VS Code、Visual Studio、CLI、cloud agent、github.com、Mobile、JetBrains、Xcode、Eclipse 9 个面，promo 倍率 7.5×。JetBrains 同步发布 inline agent mode、Next Edit Suggestions inline preview、Global Auto Approve 与未规则化命令/编辑兜底。",
-      "impact": "Business/Enterprise 管理员今日显式启用或关闭 GPT-5.5 策略；JetBrains 大规模启用 Global Auto Approve 前先设白名单边界，避免 destructive 操作被默认放行。",
-      "source": "GitHub Changelog：GPT-5.5 GA + JetBrains 更新（2026-04-24）"
+      "title": "Copilot GPT-5.5 全面 GA，JetBrains 拿到 inline agent",
+      "summary": "GPT-5.5 在 Copilot Pro+/Business/Enterprise 覆盖 VS Code、JetBrains 等 9 个开发面，倍率 7.5×；JetBrains 同步上 inline agent。",
+      "impact": "管理员今日显式启用 GPT-5.5 策略；JetBrains 上 Global Auto Approve 前先设白名单边界。",
+      "source": "GitHub Changelog：GPT-5.5 GA + JetBrains 更新"
     },
     {
-      "title": "Cursor 3.2：Multitask 子智能体、Worktrees、Multi-root Workspaces",
-      "summary": "/multitask 把请求展开为多个异步 subagent 并行执行并自动拆分大任务；worktrees 完整集成进 Agents Window，可一键把后台分支拉到前台验证；Multi-root Workspaces 让单个 agent session 横跨前端、后端与共享库做改动，跨仓不必重新 retarget。",
-      "impact": "升级 Cursor 3.2，对一个跨前后端真实需求试 /multitask + multi-root workspace；用 worktrees 把长跑测试或回归 agent 后台化，明确 multitask 的 token 预算边界。",
-      "source": "Cursor Changelog 3.2：Multitask, Worktrees, and Multi-root Workspaces"
+      "title": "Cursor 3.2：Multitask、Worktrees、Multi-root Workspaces",
+      "summary": "/multitask 把请求展开为多个异步 subagent 并行执行并自动拆分大任务；worktrees 集成 Agents Window，可一键把后台分支拉前台；Multi-root 让单个 session 横跨多仓改动。",
+      "impact": "升级 Cursor 3.2，跨前后端需求试 /multitask + multi-root；用 worktrees 后台化长跑测试 agent。",
+      "source": "Cursor Changelog 3.2"
     }
   ],
   "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260424.md",
