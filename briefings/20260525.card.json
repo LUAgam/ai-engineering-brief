@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260525",
+  "headline_summary": "智谱开源 GLM-4.7 编程 SOTA 直对 Claude Code；xAI Grok Build CLI 早期 Beta，带 ACP 与 worktree 子 Agent；钉钉发布 AI 钉钉 1.1 木兰 Agent OS 与悟空。",
+  "items": [
+    {
+      "title": "智谱开源 GLM-4.7：编程 SOTA 上线即开源",
+      "summary": "5/25 凌晨发布开源 GLM-4.7：SWE-bench Verified 73.8%、Terminal Bench 2.0 41.0%、τ²-Bench 87.4 开源 SOTA，原生跑通 Claude Code 先思考再行动。",
+      "impact": "申请 API key 做代码任务横评；接入 Claude Code 走 plan-act，与 Opus 4.7、Composer 2.5 比成本。",
+      "source": "智谱官方公众号、ModelScope ZhipuAI/GLM-4.7"
+    },
+    {
+      "title": "xAI Grok Build CLI：终端编码 Agent + ACP",
+      "summary": "PT 5/25 Grok Build 早期 Beta，限 SuperGrok/Premium Plus；Plan 模式 + clean diff，兼容 AGENTS.md 与 MCP，子 Agent 跑独立 worktree。",
+      "impact": "给 1–2 名开发者发订阅强制 Plan 模式跑真实工单，记录通过率与误操作率，与 Claude Code、Codex 对比。",
+      "source": "xAI Newsroom：Introducing Grok Build；docs.x.ai/build"
+    },
+    {
+      "title": "钉钉 AI 钉钉 1.1 木兰：全球首个工作 Agent OS",
+      "summary": "5/25 杭州发布 AI 钉钉 1.1 木兰，推出全球首个工作智能 OS：钉钉 ONE、DingTalk Real、AI 搜问、悟空、DEAP；底层 CLI 化让悟空原生操作上千项能力并打通 MCP。",
+      "impact": "对齐企业 IM 是否让渡给悟空+AI 搜问；盘点既有 MCP/Agent，在 IT 工单场景灰度悟空，记录误操作率。",
+      "source": "钉钉发布会报道、阿里云开发者社区"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260525.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
