@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260526",
+  "headline_summary": "5/26 北京时间硬更新集中在三条线：面壁智能开源端侧 1B 基座 MiniCPM5-1B，并亮出全球首个 AI 自写的生产级训练框架 ForgeTrain；昆仑万维天工 AI 发布百万上下文 Agent 基座 SkyClaw-v1.0 / lite，原生兼容 OpenClaw、Claude Code、Codex 且价格压到主流一半；GitHub Agentic Workflows `gh-aw` v0.76.1 发布，新增 replay 时间线日志、inline skill，Codex 默认升 gpt-5.4。",
+  "items": [
+    {
+      "title": "面壁智能开源 MiniCPM5-1B + ForgeTrain：1B 端侧基座 + 首个 AI 自写生产级训练框架",
+      "summary": "5/26 面壁联合清华、OpenBMB 开源 MiniCPM5-1B：1B 参数在 AA-Index 上超过所有 2B 以下模型，INT4 后权重约 0.5GB，可上手机/浏览器；Base Model 由自研框架 ForgeTrain 预训练完成，官方称该框架由 Agent 全程编写，在 H100 上与 Megatron 训练效果对齐、速度领先约 10%，昇腾上比原生框架快约 10%。模型与框架在 Hugging Face、GitHub、ModelScope 全量开源。",
+      "impact": "立即在 INT4 推理栈上跑通端侧 baseline；ForgeTrain 开源后在 H100 / 昇腾复测 10% 加速是否在自家拓扑成立，再决定是否纳入训练框架选型 Review。",
+      "source": "IT之家、量子位；Hugging Face openbmb/MiniCPM5-1B、GitHub OpenBMB/MiniCPM、OpenBMB/ForgeTrain"
+    },
+    {
+      "title": "昆仑万维天工 AI 发布 SkyClaw-v1.0 / lite：百万上下文 Agent 基座，原生兼容 OpenClaw + Claude Code + Codex",
+      "summary": "5/26 天工 AI 推出 SkyClaw-v1.0 及轻量版，百万 token 上下文，针对工具调用、多轮任务、代码生成做 mid-train + Agentic RL；原生跑 OpenClaw / Hermes / Nanobot / Claude Code / Codex，OpenClaw 任务接近 DeepSeek V4 Pro、Claude Opus 4.6；API 价格 0.5/4 元，lite 0.3/2 元，约为 Minimax 2.7 与 Qwen 3.6 一半，叠加 2–4 周限时免费，OpenAI 兼容接口由 apifree.ai 提供。",
+      "impact": "申请免费 API key 接入现役 OpenClaw / Claude Code / Codex 配置，用 10–20 条真实工单与 Minimax 2.7、DeepSeek V4 Flash、Qwen 3.6 横评，记录工具调用失败率与 token 成本。",
+      "source": "新浪科技 / IT 之家、量子位；项目主页 skyworkai.github.io/skyclaw/，API 文档 apifree.ai/model/skywork-ai/skyclaw-v1"
+    },
+    {
+      "title": "GitHub Agentic Workflows `gh-aw` v0.76.1：replay 时间线日志、Inline Skill、Codex 默认升 gpt-5.4",
+      "summary": "北京时间 5/26 15:17 发布 v0.76.1。新增 `replay` 命令在终端流式渲染 unified timeline log，便于事后复盘；inline skill 抽取/运行时与 inline sub-agent 语法对齐；Codex 默认模型升级为 gpt-5.4，lock 文件随之重生；safe-outputs push_to_pull_request_branch 自动 linearize merge commit 后再 signed push；tracker-id frontmatter 正式纳入官方 reference。",
+      "impact": "在非关键仓库装 `gh aw` 跑一条 CI 失败 → 自动修复 PR 工作流，把 `gh aw replay` 写进周会复盘；Codex 走 lock 文件锁老版本，再小流量灰度 gpt-5.4。",
+      "source": "GitHub Releases github/gh-aw v0.76.1（Published 2026-05-26 07:17:41 UTC）；项目站点 github.github.com/gh-aw/"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260526.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
