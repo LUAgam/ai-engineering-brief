@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260529",
+  "headline_summary": "北京时间 2026-05-29 硬更新集中在 Anthropic 旗舰升级与国产开源 Agent Flash 基座两条主线：凌晨 02:15 Claude Opus 4.8 上线，同步推出 Claude Code Dynamic Workflows research preview，Messages API 支持 mid-task system 条目，fast mode 价格砍到前代 1/3；上午 8 点前后阶跃星辰开源 Step 3.7 Flash（198B 稀疏 MoE / 256K / 400 TPS / Apache 2.0）。Cursor 3.6 与 OpenAI 当日博文按时区多落在北京时间 5/30，本期不收录。",
+  "items": [
+    {
+      "title": "Anthropic 上线 Claude Opus 4.8：fast mode 价格砍到 1/3，Messages API 支持 mid-task system 条目",
+      "summary": "北京时间 5/29 凌晨 02:15，Anthropic 发布 claude-opus-4-8，定价与 Opus 4.7 持平、fast mode 速度 2.5× 且价格仅为前代 1/3；默认 high effort，新增 extra/max 档；Messages API 现允许在 messages 数组里追加 system 条目，可在不破坏 prompt cache 的情况下热更新 agent 指令；官方称比 Opus 4.7 少 4× 放行代码缺陷，Online-Mind2Web 84%；全平台同步上线 Claude API、Bedrock、Vertex AI、Microsoft Foundry。",
+      "impact": "立即把 claude-opus-4-8 加入模型 catalog 灰度替换 Opus 4.7 的非关键工作流；本周在自家 SWE/Terminal/OSWorld 子集上跑 high/extra 对照评测；改造 1 条 harness 链路使用 Messages API mid-task system 条目动态更新工具权限与 token 预算。",
+      "source": "Anthropic 官方博客《Introducing Claude Opus 4.8》、华尔街见闻、环球网/TechCrunch"
+    },
+    {
+      "title": "Claude Code 推出 Dynamic Workflows research preview：单次最多 1,000 个子代理、并发上限 16",
+      "summary": "与 Opus 4.8 同步上线，Claude 自写 JavaScript 编排脚本由独立 runtime 后台执行，会话保持可交互；硬限制并发子代理 ≤16、单次 run ≤1,000，脚本本身不直接读写 fs/shell；触发方式为在 prompt 中带 workflow，或开启新 ultracode 设置（=xhigh + 自动 workflow 编排）；要求 Claude Code v2.1.154+，Max/Team/API 默认开启，Enterprise 默认关闭；早期案例为用其把 Bun 从 Zig 移植到 Rust，75 万行、原 test suite 99.8% 通过、11 天合并。",
+      "impact": "升级 Claude Code 到 ≥v2.1.154，在非关键仓库跑一次受限 codebase bug sweep 形式的 workflow，记录 token、并发峰值与 finding 真阳率；Enterprise 先定 admin 政策再开启；Max/Team 个人侧暂把 ultracode 设为按需手动开，避免账单意外。",
+      "source": "Claude 官方博客《Introducing dynamic workflows in Claude Code》、Claude Code 官方文档、MarkTechPost"
+    },
+    {
+      "title": "阶跃星辰开源 Step 3.7 Flash：198B 稀疏 MoE、~11B 激活、Apache 2.0，给主流 Agent harness 实测分",
+      "summary": "北京时间 5/29 上午 8 点前后发布并开源 Step 3.7 Flash（198B 稀疏 MoE + 1.88B ViT，288 专家激活 8 个 / ~11B 激活，256K 上下文，最高 400 TPS，Apache 2.0），权重在 GitHub/HuggingFace/ModelScope；官方分数 SWE-Bench Pro 56.26%、Terminal-Bench 2.1 59.55%、ClawEval-1.1 67.1%、τ²-bench Telecom 三档均 >98%；harness 兼容性：Claude Code 71.5%、Hermes/KiloCode 67.5%、OpenClaw 67.0%、OpenCode/RooCode 64.5%；day-0 跑通 SGLang、vLLM、TensorRT-LLM，NeMo Automodel 提供 SFT/LoRA recipe，可本地跑 Mac Studio M4 Max / DGX Spark。",
+      "impact": "从 HuggingFace/ModelScope 拉权重在自家 vLLM/SGLang/TensorRT-LLM 跑通推理，并把它作为新 backend 接入 Claude Code / OpenClaw / KiloCode 现役配置；用 10–20 条真实工单与 Step 3.5 Flash、DeepSeek V4-Flash、Qwen 系列 Flash 同任务横评，决定是否进入主力候选。",
+      "source": "阶跃星辰开源博客、第一财经、大模型之家、NVIDIA Technical Blog、MarkTechPost、机器之心 Pro"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260529.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
