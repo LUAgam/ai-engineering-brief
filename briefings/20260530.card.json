@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260530",
+  "headline_summary": "北京时间 2026-05-30 头部厂商在 Agent 治理、评测标准与桌面 Computer Use 跨平台三条线集中发力：Cursor 3.6 推出 Auto-review Run Mode 把 Shell/MCP/Fetch 工具调用拆成 Allowlist→Sandbox→分类器三段、并支持仓库级 .cursor/permissions.json autoRun 规则；OpenAI Codex 桌面 26.527 把 Computer Use 与移动端远程控制铺到 Windows 并暴露 token 用量；OpenAI 同时发布第三方评测 playbook，明确 harness、token 预算、工具配置与 validity check 必须披露。",
+  "items": [
+    {
+      "title": "Cursor 3.6 Auto-review Run Mode：Shell/MCP/Fetch 三段过审 + 仓库级 autoRun 规则",
+      "summary": "BJT 5-30 08:04（PT 5-29 17:04），Cursor 3.6 上线 Auto-review Run Mode：工具调用先走 terminal/MCP allowlist，可沙盒化的进 sandbox（macOS/Linux/Windows-via-WSL2，含网络与文件系统限制），其余交给 LLM 分类器子代理决定放行/改换/升级审批，分类器不额外计费。仓库新增 .cursor/permissions.json 的 autoRun.allow_instructions / block_instructions 自然语言规则，可 commit 共享；官方 Agent Security 文档将其列为 3.6 起推荐默认，但明确分类器非确定、是 best-effort 便利层而非 security boundary。",
+      "impact": "立即在 1 个非关键仓库切到 Auto-review，commit 最小 permissions.json（block npx 与项目目录外修改、allow read-only Shell/MCP/WebFetch），观察中断频率与误判；agent 评测看板加 Auto-review 分类决策日志维度。",
+      "source": "Cursor 官方 Changelog 与 Forum（Colin, May 29 5:04pm PT）；Totalum、note 「ITニュース」、headsupai 复述"
+    },
+    {
+      "title": "OpenAI Codex 桌面 26.527：Windows 端 Computer Use 上线 + ChatGPT 移动端远程控制 Windows + Profile 暴露 token 用量",
+      "summary": "BJT 5-30 01:41（PT 5-29 10:41 AM @OpenAI 推文），Codex 桌面 26.527 把过去仅限 Mac 的 Computer Use 与移动端远程控制下放到 Windows：可看屏幕、点击、键入操控原生桌面应用（前台模式，期间 Windows 会话不可并行人工操作），ChatGPT iOS/Android 与 Mac 上的 Codex 可远程启动新线程、续跑既有任务、审批操作、查看 diff/测试/截图/终端输出；Profile 区新增 token activity 面板；Computer Use 在 EEA、UK、Switzerland 启用受限。",
+      "impact": "在 1–2 台 Windows 开发/测试机升级到 26.527，跑通移动端启动→Windows Codex 执行→审批 diff 最小回环；选 1 条历史靠脚本不稳的 Windows 桌面 GUI 回归任务改用 Codex Computer Use 复跑，对账 Profile token 数字。",
+      "source": "OpenAI Codex changelog 与 @OpenAI 官方 X；Neowin、9to5Mac、Kingy AI 复述"
+    },
+    {
+      "title": "OpenAI《A shared playbook for trustworthy third party evaluations》：评测必须披露 harness/token 预算/工具/validity check",
+      "summary": "BJT 5-30 03:41（作者推 PT 5-29 12:41 PM），OpenAI 联合 Cedric Whitney 等人发布前沿模型第三方评测 playbook：评测应拆为能力激发、安全机制、对比三类命题；披露字段含模型版本、任务设定、计分、工具/harness 配置、token 预算、上下文，以及对 reward hacking、evaluation awareness、test-set 污染、refusals、sandbagging、broken problems 的 validity check。引用 GPT-5.5 cyber-range 启用 compaction 抬分、UK AISI token 预算 10M→100M 带来最高 +59% 跃升两个具体数字佐证 harness 与预算的主导效应。",
+      "impact": "把 7 项披露字段做成内部 eval 报告模板强制填齐；本周在自家 SWE-Bench/Terminal-Bench 子集对同模型跑 10M vs 50M token 预算验证 10pp+ 跃升，并最小落一个 reward hacking/contamination 的 pre-flight 检查脚本。",
+      "source": "OpenAI 官方页 trustworthy-third-party-evaluations-foundations；Silicon Report、Blockchain.News、Headlines Briefing 复述"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260530.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
