@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260602",
+  "headline_summary": "北京时间 2026-06-02 头部厂商沿多模态 Agent 基座、Coding Agent 安全门禁、云端模型分发三条线集中发力：阿里通义千问发布 Qwen3.7-Plus 把视觉/语言/GUI/CLI/代码合到同一 Agent 基座并跑通 11 小时自治 App 全链路开发；OpenAI 与 AWS 把 GPT-5.5/GPT-5.4/Codex 在 Amazon Bedrock 上从 4 月底 limited preview 转入 GA；Anthropic 推送 Claude Code v2.1.160，新增 shell startup 与 build 配置写入审批，并把 dynamic-workflow 触发词从 workflow 改为 ultracode（破坏式变更）。",
+  "items": [
+    {
+      "title": "Qwen3.7-Plus：阿里把视觉+语言+GUI/CLI+代码合到同一 Agent 基座，Hybrid-Agent 11 小时自治完成 App 全链路开发",
+      "summary": "BJT 6-02 01:54（@Alibaba_Qwen 官方 X 帖），阿里通义千问发布 Qwen3.7-Plus，将视觉与语言统一为一体化 Agent 基座，原生支持 GUI 与 CLI 混合调度、可读屏操作 GUI、基于视觉参考生成代码；官方实测基于该模型的 Hybrid-Agent 连续运行 11 小时、>1000 次工具调用、>10000 行代码无人工干预完成英语单词学习 App 全链路；明确支持 Claude Code、OpenClaw、Qwen Code 等多 harness 通用部署。1M 上下文，API 暴露 preserve_thinking，OpenAI 兼容，已上阿里云百炼与 Qwen Studio，定价 $0.4/$1.6 per 1M tokens；模型为闭源专有。",
+      "impact": "把 alibaba/qwen3.7-plus 加进现有 Coding Agent harness 的 model catalog，跑通 1 个 GUI + 1 个 CLI/编码 + 1 个混合任务最小回环，与 Claude Opus 4.8、GPT-5.5、Composer 2.5 做工具调用次数/token 成本/结论一致性 1:1 对比；本周对自家 ScreenSpot Pro/AndroidWorld 子集做复测。",
+      "source": "Qwen 官方 X @Alibaba_Qwen；Alibaba Cloud Global LinkedIn；观点网、华尔街见闻、AIBase；VentureBeat；Vercel AI Gateway changelog"
+    },
+    {
+      "title": "OpenAI 模型与 Codex 在 Amazon Bedrock 转 GA：GPT-5.5/5.4/Codex 走 Bedrock，价格对齐一方价、消耗计入 AWS commit",
+      "summary": "PT 2026-06-01（对应 BJT 6-02 凌晨；AWS What's New 与 OpenAI 官方页同日，aboutamazon.com 标注 Updated June 1, 2026），AWS 与 OpenAI 把 4/28 limited preview 的 GPT-5.5/GPT-5.4/Codex on Bedrock 转入 GA。GPT-5.5 在 US East(Ohio)、GPT-5.4 在 Ohio 与 Oregon 通过 Responses API 调用，价格对齐 OpenAI 一方价、无加价；Codex CLI/桌面 app/VS Code/JetBrains/Xcode 可把 provider 切到 amazon-bedrock，认证走 IAM 或 Bedrock API key，消耗计入 AWS commit。Fast Mode、Codex 云端 review/security/web agent、Daybreak/Codex Security 暂未随同 GA。",
+      "impact": "在非生产 AWS 账户给 Codex CLI 加 amazon-bedrock provider 跑通最小回环并打开 CloudTrail verbose 核对工具调用审计；本周在自家 SWE-Bench/Terminal-Bench 上跑 OpenAI direct vs Bedrock 双 lane 对比延迟与成本，决定是否切线，并把 Fast Mode 不可用写进选型清单。",
+      "source": "OpenAI 官方 openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws；AWS What's New 与 AWS News Blog；OpenAI Developers Docs；About Amazon 更新页"
+    },
+    {
+      "title": "Claude Code v2.1.160：shell startup 与 build 配置写入需审批、workflow 触发词改名 ultracode（破坏式变更）",
+      "summary": "BJT 6-02 10:10（GitHub Release UTC 02:10:17，作者 @ashwin-ant，anthropics/claude-code 130K stars）。新增写入审批：shell startup 文件（.zshenv/.zlogin/.bash_login）与 ~/.config/git/ 在写入前必须 prompt；acceptEdits 模式下 .npmrc/.yarnrc*/bunfig.toml/.bazelrc/.pre-commit-config.yaml/.devcontainer/ 等构建工具配置不再无声放行。dynamic-workflow 触发词从 workflow 改名 ultracode，旧词不再触发（破坏式变更）。附 background-session 恢复丢历史/重跑、Windows 高负载下卡死、Auto mode 分类器延迟、第三方 provider 提示等大量修复。",
+      "impact": "全员升级到 2.1.160，在仓库 prompt 模板/AGENTS.md/CI 脚本里 grep 替换 workflow→ultracode；onboarding 写明 Auto/acceptEdits 现在会拦截 shell startup 与 build 配置写入；用恶意 .npmrc/.pre-commit-config.yaml/.devcontainer 红队样本验证拦截是否生效。",
+      "source": "GitHub Release anthropics/claude-code v2.1.160；Claude Code 官方 docs Changelog；AIDevStack 复盘《Claude Code 2.1.160: Security & Background Session Fixes》"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260602.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
