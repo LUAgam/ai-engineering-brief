@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260603",
+  "headline_summary": "BJT 6/3 凌晨集中爆发：OpenAI Codex 扩成知识工作平台（Sites/6 plugins/Annotations）；Microsoft Build 一次性放出 7 个 MAI 模型，MAI-Code-1-Flash 已 10% 灰度进 VS Code Copilot Auto picker；GitHub 推出 Agent HQ 统一治理 Anthropic/OpenAI/Google/xAI 等 agent，Copilot CLI rubber duck 与语音 GA；Anthropic 公开 832 个被封 AI cyber 账户的年度复盘并提出 ARiES 评分。",
+  "items": [
+    {
+      "title": "Microsoft Build 2026：7 个 MAI 模型一次发布，MAI-Code-1-Flash 进 VS Code Copilot Auto picker",
+      "summary": "BJT 6/3 00:30，Microsoft 一次发布 MAI-Thinking-1（35B active MoE / 256K 上下文，SWE Verified 73.5%、SWE Pro 52.8%、AIME 2025 97%）等 7 个自研模型，零蒸馏、企业级 licensed 数据；MAI-Code-1-Flash 5B、SWE Pro 51%，今日起约 10% 灰度滚到 VS Code Copilot 个人用户并作为 Auto picker 默认候选；Foundry Toolkit GA、Toolboxes/Hosted Agents 进 public preview。",
+      "impact": "在 Copilot 内部看板新增 mai-code-1-flash / mai-thinking-1 两档；Auto picker 灰度今日生效，不埋点会让历史模型对比口径被静默打乱；本周在 SWE-Bench Pro 子集对照 Opus 4.8 / GPT-5.5 / Composer 2.5。",
+      "source": "Microsoft AI 官方博客 / Microsoft Foundry Blog / Build 2026 Live Blog"
+    },
+    {
+      "title": "GitHub Agent HQ + Copilot CLI 大版本：Rubber Duck 默认开启 GA、语音 GA、Copilot SDK GA",
+      "summary": "BJT 6/3 00:30，GitHub 推出 Agent HQ：在 GitHub / VS Code / mobile / CLI 共享同一 mission control，后续几月 Anthropic/OpenAI/Google/Cognition/xAI 等 agent 统一进付费 Copilot 订阅并走与人类相同的 branch protection 与 audit log；Copilot CLI 同窗口推 Rubber Duck 跨家二审默认 GA、语音输入 GA、Copilot SDK GA，`/every` `/after` 调度与新 tab UI 在 /experimental。",
+      "impact": "运行 `copilot update` 升级；明确告知团队 Rubber Duck 现在默认开启并把 `/every` `/after` `/rubber-duck` 写进规范；本周对照启用前后 SWE-Bench Pro 完成率与 token 成本差，避免与 Cursor Auto-review、Codex Security 形成重复二审。",
+      "source": "GitHub Blog（Agent HQ）/ GitHub Changelog & github/copilot-cli Releases"
+    },
+    {
+      "title": "OpenAI Codex 扩成知识工作平台：Sites 托管 web app、6 个 role-specific plugins 接 62 个 SaaS、Annotations 局部 refine",
+      "summary": "BJT 6/3 00:00（PT 6/2 9:00 AM）OpenAI 同步发布 Codex 三件套：Sites（Business/Enterprise 预览，Codex 直接产出 hosted 可分享 web app，自带 D1/R2 持久化，伙伴含 Wix/Replit/Lovable/Figma）；6 个 role-specific plugins 一次接入 62 个业务 SaaS（含 Salesforce/Snowflake/Figma）与 110 个 skill；Annotations 从代码扩到文档/表格/幻灯。配套报告披露 Codex WAU 突破 500 万，非开发者占 20% 且增速 3×。",
+      "impact": "立即把 plugin 默认状态调成 opt-in 而非 opt-out，避免 plugin 全开后出现 Salesforce/Snowflake 数据出境；规定 Sites 内部工具必须挂 workspace 内可见 URL，禁用 public link；本周量化 Annotations 局部 refine 的 token 节省作为是否纳入标准 prompt 工作流的依据。",
+      "source": "OpenAI 官方（openai.com/index/codex-for-every-role-tool-workflow/）/ OpenAI Developers Docs / TechCrunch / VentureBeat"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260603.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
