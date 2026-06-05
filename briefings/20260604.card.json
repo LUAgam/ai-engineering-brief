@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260604",
+  "headline_summary": "BJT 6/4 工程信号集中在 Coding Agent 编辑器侧：GitHub Copilot 全线开 1M token 上下文 + 可配置 reasoning，覆盖 Sonnet/Opus 4.6-4.8 与 GPT-5.3-Codex/5.4/5.5；同日 Agent tasks REST API public preview、Fix-with-Copilot for Actions 进 Pro/Pro+/Max、Copilot Chat PR 富上下文与 Enterprise Teams 一并 GA；Cursor 3.7 发布 Canvas Design Mode 与 Context Usage Report；VS Code 1.123 把 1M 上下文落到 IDE 端并加 chat session 跨机自动同步。",
+  "items": [
+    {
+      "title": "GitHub Copilot 全线开 1M token 上下文 + 可配置 reasoning：VS Code / Copilot CLI / Copilot app 三入口一并下放",
+      "summary": "BJT 6/4，GitHub Copilot 在 VS Code、Copilot CLI、GitHub Copilot app 三个开发者主入口同时打开 1M token 上下文与可配置 reasoning 级别两项扩展能力，模型矩阵覆盖 Claude Sonnet 4.6 / Opus 4.6-4.8 与 GPT-5.3-Codex / 5.4 / 5.5 全线；官方明确扩展上下文与高 reasoning 均显著放大 AI credits 消耗，建议日常任务仍走默认档；同窗口 VS Code 1.123 把 1M 上下文支持落到 IDE 端并加 chat session 跨机自动同步。",
+      "impact": "团队 Copilot prompt 模板加一条「日常保持默认档、仅在跨大型仓库/长文档/复杂多文件重构显式开扩展档」；在 SWE-Bench Pro 子集对照 1M vs 默认、low vs high reasoning 四组样本；FinOps 增设单 PR Copilot credits 告警阈值。",
+      "source": "GitHub Changelog（github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/）/ GitHub Docs Supported AI models / VS Code 1.123 release notes"
+    },
+    {
+      "title": "GitHub 6/4 配套四连发：Agent tasks REST API public preview + Fix-with-Copilot for failing Actions 进 Pro/Pro+/Max + Copilot Chat PR 富上下文 GA + Enterprise Teams GA",
+      "summary": "BJT 6/4 同窗口，Pro/Pro+/Max 用户可用 Agent tasks REST API 程序化启动并跟踪 Copilot cloud agent 任务；Actions 失败页「Fix with Copilot」按钮对个人订阅开放，cloud agent 自动调查、push fix 并 @ 用户 review；Copilot Chat 在 github.com PR 页自动拉取 file changes/commits/comments/reviews 富上下文从 preview 转 GA；Enterprise Teams 从 2025/09 public preview 转 GA，可在 enterprise 一处定义跨 org 用户组（暂不支持 fine-grained PAT 与 GitHub App token）。",
+      "impact": "在 SRE/DevEx ChatOps 工具加 /copilot-task slash 命令调用 REST API；选 2-3 个高 flake Actions 工作流试点 Fix with Copilot 一周记录修复成功率与人工额外改动量；Enterprise admin 在 People → Enterprise teams 一次性梳理跨 org 通用角色组。",
+      "source": "GitHub Changelog（github.blog/changelog 2026-06-04 系列：agent-tasks-rest-api / fix-with-copilot-for-failing-actions / copilot-chat-brings-richer-context-to-pull-requests / enterprise-teams-is-now-generally-available）"
+    },
+    {
+      "title": "Cursor 3.7：Canvas Design Mode 点选标注 UI 元素 + Context Usage Report 把 agent 上下文消耗变成可交互画布",
+      "summary": "BJT 6/4 Cursor 发布 3.7：Design Mode 让用户在 canvas 内直接选中并标注 UI 元素引导 agent 编辑，不再用文字描述改动；Context usage report 把 agent 当前上下文按 system prompt / tool definitions / rules / skills 等维度拆成交互式 canvas，可在画布内继续追问、并通过内嵌「Debug with Agent」按钮一键打开新对话找上下文优化点；canvas 同时支持全屏分享、agent 在画布内嵌入触发固定 prompt 的按钮、改进类型错误修复与图表自定义。",
+      "impact": "升级 Cursor 到 3.7；让使用 canvas 的同事跑一次 Design Mode 改一个内部 dashboard 布局；对当前默认 agent harness 跑一次 Context usage report 截图存档作为 baseline，识别占 token 高但回报低的 skills/rules。",
+      "source": "Cursor Changelog（cursor.com/changelog · Jun 4, 2026 · 3.7 Canvas Design Mode and Context Usage Report）"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260604.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
