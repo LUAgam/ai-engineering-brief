@@ -1,0 +1,27 @@
+{
+  "briefing_date": "20260610",
+  "headline_summary": "BJT 6/10 集中在 Coding Agent 治理工具链细化 + 代码评审本地化下沉：GitHub Copilot Chat 打通 cloud agent handoff、Copilot CLI 新增实验性 /security-review；Cursor Bugbot 切 Composer 2.5，90s 完成且新增 /review 本地预审；Google 开源 DiffusionGemma 26B MoE 文本扩散模型，给本地低并发推理新吞吐路径。",
+  "items": [
+    {
+      "title": "GitHub Copilot 6/10：Chat 接力 cloud agent session + Copilot CLI 实验性 /security-review",
+      "summary": "github.com 上 Copilot Chat 与 Copilot cloud agent 形成 handoff，新增 Session search（按主题/时间检索过去 agent session）与 Get agent logs（把 cloud agent PR 日志拉进对话）。同日 Copilot CLI 新增 /security-review 实验命令，对本地变更做 AI 驱动漏洞扫描（注入/XSS/路径穿越/弱加密），独立于 CodeQL/Dependabot/Secret Scanning，定位 commit 前轻量自查。",
+      "impact": "PR review SOP 加一步 Session search 查同主题历史；在有真实漏洞历史的 PR 上 replay /security-review 测召回与误报，明确不替代 GHAS。",
+      "source": "GitHub Changelog（2026-06-10 两条 Copilot 更新）"
+    },
+    {
+      "title": "Cursor Bugbot 切 Composer 2.5：90s≪5min、bugs/review +10%、cost −22% + /review 本地预审",
+      "summary": "Bugbot 底模切到 Composer 2.5，平均 review 时间 ~5min→~90s，平均 bugs/review 0.56→0.62，单次 run 成本 −22%。新增 /review、/review-bugbot、/review-security 三个 slash 命令，Cursor 3.7+ 与 cursor.com/agents 上 push 前本地跑；与 GitHub/GitLab Bugbot 同 diff 去重，并支持只审查自上次以来新增改动的增量模式。CLI coming soon。",
+      "impact": "Cursor 升 3.7+，团队 SOP 加 push 前 /review-bugbot+/review-security；保留远端 Bugbot 形成去重链；在 1 个高频迭代项目启用增量配置回顾反馈噪声变化。",
+      "source": "Cursor Changelog（2026-06-10 Bugbot）"
+    },
+    {
+      "title": "Google 开源 DiffusionGemma：26B-A4B MoE 文本扩散，H100 1000+ tok/s、量化 18GB VRAM、Apache 2.0",
+      "summary": "基于 Gemma 4 26B-A4B 骨干替换为文本扩散头，3.8B 活跃，256K 上下文，多模态输入。每次 forward 并行 finalize ~15-20 token，支持 bidirectional attention 与 re-noise 自我修正。H100 1000+ tok/s、RTX 5090 700+ tok/s，NVFP4 量化 18GB VRAM 可跑，vLLM/Transformers/MLX/Unsloth Day-0。官方明确通用质量低于 Gemma 4，适合本地低并发/inline editing/code infilling/约束生成，不适合高 QPS 云端 serving。",
+      "impact": "在 1 张 H100/5090 上用 vLLM 跑通基线；在自家 inline edit/code infilling/约束生成评测集上对比自回归 baseline，不拿它跑通用 chat 对照。",
+      "source": "Google Blog《Introducing DiffusionGemma》+ HuggingFace google/diffusiongemma-26B-A4B-it"
+    }
+  ],
+  "main_url": "https://github.com/LUAgam/ai-engineering-brief/blob/main/briefings/20260610.md",
+  "repo_url": "https://github.com/LUAgam/ai-engineering-brief",
+  "log_path": "/root/.openclaw/logs/ai-news-cron.log"
+}
