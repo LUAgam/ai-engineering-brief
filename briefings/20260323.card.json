@@ -1,6 +1,6 @@
 {
   "briefing_date": "20260323",
-  "headline_summary": "北京时间20260323可核实且直接影响工程实践的新增不多，重点集中在工程工具链：Microsoft Aspire 13.2.0把 agent、MCP、Foundry 与本地编排进一步合并；OpenClaw 带来插件 SDK 与 Browser MCP 的 breaking changes；Vercel AI SDK 则移除了 experimental agent events，提示事件契约仍在收敛。",
+  "headline_summary": "北京时间20260323可用硬证据定锚、且直接影响工程实践的新增不多，正式收录仍以工程工具链更新为主：Microsoft Aspire 13.2.0把 agent、MCP、Foundry 与本地编排进一步合并；OpenClaw 调整插件 SDK、Browser MCP 与安全默认项；Vercel AI SDK 则移除了 experimental agent events，提示事件契约仍在收敛。",
   "items": [
     {
       "title": "Microsoft Aspire 13.2.0 把 AI agent、MCP 与本地应用编排进一步并到同一条开发链路",
@@ -9,8 +9,8 @@
       "source": "Microsoft `microsoft/aspire` GitHub Release / Aspire 官方文档"
     },
     {
-      "title": "OpenClaw `2026.3.22` 发布大批 breaking changes，重点落在插件 SDK、Browser MCP 和安全默认项",
-      "summary": "该版本移除 `openclaw/extension-api`，要求迁移到 `openclaw/plugin-sdk/*`；插件安装优先走 ClawHub；Browser/Chrome MCP 去掉旧 relay 路径，并同步收紧 webhook 预认证和 exec/env 注入等安全默认项。",
+      "title": "OpenClaw `2026.3.22` 集中调整插件 SDK、Browser MCP 与安全默认项，升级面不小",
+      "summary": "该版本移除 `openclaw/extension-api`，要求迁移到 `openclaw/plugin-sdk/*`；插件安装优先走 ClawHub；Browser/Chrome MCP 去掉旧 relay 路径，并同步收紧 webhook 预认证、exec/env 注入和若干兼容回退逻辑。",
       "impact": "盘点是否依赖旧 SDK、旧 Chrome relay、旧环境变量或旧状态目录；升级前先跑 doctor --fix 与浏览器任务、插件装载、审批链路、webhook 的端到端回归。",
       "source": "OpenClaw 官方 GitHub Release"
     },
